@@ -1,0 +1,38 @@
+{
+    "vehicle_param": {
+        "vehicle_mass": 2300,
+        "wheel_radius": 0.32,
+        "motor2wheel_ratio": 10.685,
+        "J_whe": 1.2,
+        "g_acc": 9.8,
+        "motor_eff":0.95,
+        "Cal_Ff":{
+            "cof":0.3077,
+            "const":95
+        }
+    },
+    "simulation_param": {
+        "simulation_cycle": 0.01,
+        "simulation_time": 20
+    },
+    "blf_path":"D:/OneDrive/Desktop/data/shuju/biaoding12022026_03_22_17_23_06.blf",
+    "signals":{
+        "EVCAN":{
+            "MCU_Torque":"MCU Torque",
+            "VCU2MCU_MotorTorque_cmd": "Cmd Torque",
+            "MCU_MotorSpeed":"MCU Motor Speed"
+        },
+        "CCAN":{
+            "WhlSpdFR":"WhlSpdFR",
+            "WhlSpdFL":"WhlSpdFL",
+            "WhlSpdRL":"WhlSpdRL",
+            "WhlSpdRR":"WhlSpdRR",
+            "VehSpd":"VehSpd",
+            "LongAcc":"LongAcc",
+            "GasPdlPsnRaw":"GasPdlPsnRaw",
+            "RRWheelSpdPulse":"RRWheelSpdPulse",
+            "RLWheelSpdPulse":"RLWheelSpdPulse",
+            "FLWheelSpdPulse":"FLWheelSpdPulse"
+        }
+    }
+}
