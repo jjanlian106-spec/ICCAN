@@ -1,18 +1,38 @@
 # 该工具实现从blf实车底盘报文信息到数据仿真可视化的完整流程
 可在主函数中对信号做处理，实现实车运行过程中参数估计
+
 # 文件说明
+
 ## vehicle_param.json
 配置车型参数及仿真周期参数，可通过该json文件标定实车未知参数，用于底盘控制
+
 ## blf2dic
 将实车录制报文blf文件转成字典类型数据，供仿真调用
+
 ## fullt2d.py
 将实车不连续的信号统一生成对应时间戳的数据，并生成插值后的新结果统一时间戳数据
+
 ## bokeh_show.py
 可视化界面
+
 ## main_ICCAN.py
 主函数，用于集成数据处理结果及仿真模型搭建
 
+## jupyter启动命令
+jupyter notebook --port 8080
+
 # 使用方法
-参考飞书文档
+参考飞书文档:https://jcnnl4588bfl.feishu.cn/wiki/BsogwaNPki1FM8kTOdNcSFvsnKd
+
+# commit提交格式
+feat(readme) [None] Update readme
+feat/fix:新增功能或特性/修复bug
+(readme)：更新内容所属模块
+[None]:更新内容所属项目号
+Update readme:更新具体内容，首字母大写，其他字母小写
+
+# 提交说明
+个人开发需要基于main_dev拉出个人开发分支，需要合入时向main_dev提Mr，同时指派@zhijia.lian review，没问题后合入，并定期合入主线分支main
+
 # 其他说明
 dbc_ref文件夹下数据，说明本人身份，联系@zhijia.lian获取
