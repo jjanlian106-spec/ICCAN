@@ -15,7 +15,14 @@
         "simulation_cycle": 0.01,
         "simulation_time": 20
     },
-    "blf_path":"D:/OneDrive/Desktop/data/shuju/biaoding12022026_03_22_17_23_06.blf",
+    "signal_interpolation": "linear",
+    "blf_time_base": "first_sample",
+    "blf_path":"D:\\OneDrive\\Desktop\\0526test\\0.6_0.5_0.3\\0526project2026_05_26_11_54_05.blf",
+    "dbc_path":{
+        "EVCAN":"D:/OneDrive/Desktop/E3/E3_signal/E3液冷_X6D12-EVCAN_V1_05_20251121.dbc",
+        "CCAN":"D:/OneDrive/Desktop/E3/E3_signal/E3液冷_X6D12-CCAN_AEBS_V1_14_20251125.dbc",
+        "Tcs_signal":"D:/OneDrive/Desktop/E3/E3_signal/Tcs_signal.dbc"
+    },
     "signals":{
         "EVCAN":{
             "MCU_Torque":"MCU Torque",
@@ -33,6 +40,14 @@
             "RRWheelSpdPulse":"RRWheelSpdPulse",
             "RLWheelSpdPulse":"RLWheelSpdPulse",
             "FLWheelSpdPulse":"FLWheelSpdPulse"
+        },
+        "Tcs_signal":{
+            "tcs_algorithm_state": "Tcs algorithm state",
+            "tcs_disable_code": "Tcs disable code",
+            "tcs_enable_code": "Tcs enable code",
+            "tcs_fault_code": "Tcs fault code",
+            "tcs_kickdown_code": "Tcs kickdown code",
+            "tcs_state": "Tcs state"
         }
     }
 }

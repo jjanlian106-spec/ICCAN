@@ -7,7 +7,7 @@ import os
 import pickle
 import can
 import cantools
-from typing import Any, Dict, List, Optional, Sequence
+from typing import Any, Dict, List, Optional, Sequence, Tuple, Union
 
 def _default_out_path(blf_path: str, fmt: str) -> str:
     base, _ext = os.path.splitext(blf_path)
@@ -64,10 +64,39 @@ def _build_frame_id_sets(db: Any, wanted_signals: Sequence[str]) -> set[int]:
     return frame_ids
 
 
+def _coerce_channel_map(raw: Any) -> Dict[str, Union[int, List[int], Tuple[int, ...]]]:
+    """vehicle_param.json 里 blf_channel_map：{ \"CCAN\": 1, \"EVCAN\": [0,2] }"""
+    if not isinstance(raw, dict):
+        return {}
+    out: Dict[str, Union[int, List[int], Tuple[int, ...]]] = {}
+    for bus, ch in raw.items():
+        b = str(bus)
+        if isinstance(ch, (list, tuple)):
+            out[b] = [int(x) for x in ch]
+        elif ch is None:
+            continue
+        else:
+            out[b] = int(ch)
+    return out
+
+
+def _channel_allows(msg: can.Message, bus: str, channel_by_bus: Dict[str, Union[int, List[int], Tuple[int, ...]]]) -> bool:
+    """未配置该 bus 的通道 = 不限制；配置了则必须匹配（多通道录制时避免误用其它总线 DBC 解码）。"""
+    if bus not in channel_by_bus:
+        return True
+    allowed = channel_by_bus[bus]
+    if msg.channel is None:
+        return False
+    if isinstance(allowed, (list, tuple)):
+        return int(msg.channel) in [int(x) for x in allowed]
+    return int(msg.channel) == int(allowed)
+
+
 def blf_to_dict_by_config(
     blf_path: str,
     bus_to_dbc_path: Dict[str, str],
     signals_by_bus: Dict[str, Sequence[str]],
+    channel_by_bus: Optional[Dict[str, Union[int, List[int], Tuple[int, ...]]]] = None,
 ) -> Dict[str, Any]:
     if not os.path.exists(blf_path):
         raise FileNotFoundError(f"找不到 BLF 文件：{blf_path}")
@@ -89,6 +118,8 @@ def blf_to_dict_by_config(
     t_min: Optional[float] = None
     t_max: Optional[float] = None
 
+    ch_map = channel_by_bus or {}
+
     reader = can.BLFReader(blf_path)
     for msg in reader:
         t = float(msg.timestamp)
@@ -102,6 +133,8 @@ def blf_to_dict_by_config(
 
         # 对每个 bus：先用 frame_id set 过滤，再解码
         for bus, frame_ids in bus_to_frame_ids.items():
+            if not _channel_allows(msg, bus, ch_map):
+                continue
             if arb_id not in frame_ids:
                 continue
             db = bus_to_db[bus]
@@ -129,15 +162,16 @@ def blf_to_dict_by_config(
         "num_signals": len(signals),
         "bus_to_dbc": {k: os.path.abspath(v) for k, v in bus_to_dbc_path.items()},
         "signals_by_bus": {k: list(v) for k, v in signals_by_bus.items()},
+        "blf_channel_map": ch_map if ch_map else None,
     }
     return {"meta": meta, "signals": signals}
 
-def unify_data_time(data: Dict[str, Any]) -> Dict[str, Any]:
+def unify_data_time(data: Dict[str, Any], time_base: str = "first_sample") -> Dict[str, Any]:
     """
     时间戳归一化：
-    - 在 data["signals"] 里找到所有信号首个时间戳 t[0] 的最小值，记为 t0
-    - 让所有信号的时间戳序列都减去 t0
-    - 将 t0 记录到 meta["t0"]，并同步更新 meta["t_min"]/meta["t_max"]（若存在）
+    - time_base=\"first_sample\"（默认）：t0 = 各已解码信号首点时间的最小值（原行为）
+    - time_base=\"file_start\"：t0 = 整条 BLF 最早时间 meta[\"t_min\"]，便于与 TSMaster 等按录制起点对齐
+    - 将所有信号时间减去 t0，写入 meta[\"t0\"]，并更新 meta[\"t_min\"]/meta[\"t_max\"]
     """
     if not isinstance(data, dict):
         raise TypeError("data 必须是 dict")
@@ -145,16 +179,22 @@ def unify_data_time(data: Dict[str, Any]) -> Dict[str, Any]:
     if not isinstance(signals, dict):
         raise ValueError("data 缺少 signals 字段或类型不正确")
 
+    meta = data.get("meta")
+    meta_dict = meta if isinstance(meta, dict) else {}
+
     t0: Optional[float] = None
-    for _sig_name, series in signals.items():
-        if not isinstance(series, dict):
-            continue
-        t_list = series.get("t")
-        if not isinstance(t_list, list) or len(t_list) == 0:
-            continue
-        first_t = float(t_list[0])
-        if t0 is None or first_t < t0:
-            t0 = first_t
+    if time_base == "file_start" and meta_dict.get("t_min") is not None:
+        t0 = float(meta_dict["t_min"])
+    else:
+        for _sig_name, series in signals.items():
+            if not isinstance(series, dict):
+                continue
+            t_list = series.get("t")
+            if not isinstance(t_list, list) or len(t_list) == 0:
+                continue
+            first_t = float(t_list[0])
+            if t0 is None or first_t < t0:
+                t0 = first_t
 
     if t0 is None:
         raise ValueError("signals 中没有找到任何可用时间戳（t 列表为空或缺失）")
@@ -167,9 +207,9 @@ def unify_data_time(data: Dict[str, Any]) -> Dict[str, Any]:
             continue
         series["t"] = [float(t) - t0 for t in t_list]
 
-    meta = data.get("meta")
     if isinstance(meta, dict):
         meta["t0"] = t0
+        meta["time_base"] = time_base
         if "t_min" in meta and meta["t_min"] is not None:
             meta["t_min"] = float(meta["t_min"]) - t0
         if "t_max" in meta and meta["t_max"] is not None:
@@ -228,7 +268,8 @@ def blf2dic_main() -> dict:
         for sig_name, display in sig_map.items():
             display_name_map[str(sig_name)] = str(display)
 
-    dbc_map = cfg.get("dbc_map") or cfg.get("dbc_files") or cfg.get("dbc")
+    # 优先使用顶层 dbc_path：键与 signals 分组一致（如 EVCAN/CCAN/Tcs_signal）
+    dbc_map = cfg.get("dbc_path") or cfg.get("dbc_map") or cfg.get("dbc_files") or cfg.get("dbc")
     bus_to_dbc_path: Dict[str, str] = {}
     for bus in signals_by_bus.keys():
         try:
@@ -252,14 +293,24 @@ def blf2dic_main() -> dict:
     if not bus_to_dbc_path:
         raise ValueError("未能为任何 signals 分组找到对应 DBC，请检查 vehicle_param.json 中的 DBC 配置或 dbc_ref 目录。")
 
+    channel_raw = cfg.get("blf_channel_map")
+    if channel_raw is None and isinstance(cfg.get("blf_decode"), dict):
+        channel_raw = cfg["blf_decode"].get("channel_map")
+    channel_by_bus = _coerce_channel_map(channel_raw)
+
     data = blf_to_dict_by_config(
         blf_path=blf_path,
         bus_to_dbc_path=bus_to_dbc_path,
         signals_by_bus=signals_by_bus,
+        channel_by_bus=channel_by_bus or None,
     )
     data["meta"]["signals_config"] = cfg_signals
     data["meta"]["display_names"] = display_name_map
-    unify_data_time(data)
+
+    time_base = str(cfg.get("blf_time_base", "first_sample"))
+    if time_base not in ("first_sample", "file_start"):
+        time_base = "first_sample"
+    unify_data_time(data, time_base=time_base)
 
     return data
 
