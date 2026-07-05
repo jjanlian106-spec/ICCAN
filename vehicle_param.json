@@ -17,7 +17,7 @@
     },
     "signal_interpolation": "linear",
     "blf_time_base": "first_sample",
-    "blf_path":"D:\\OneDrive\\Desktop\\0526test\\0.6_0.5_0.3\\0526project2026_05_26_11_54_05.blf",
+    "blf_path":"D:/OneDrive/xwechat_files/wxid_zmm1z5rcp5tk22_b4a8/msg/file/2026-06/6.25allblf/PID/0526project2026_06_25_10_40_06.blf",
     "dbc_path":{
         "EVCAN":"D:/OneDrive/Desktop/E3/E3_signal/E3液冷_X6D12-EVCAN_V1_05_20251121.dbc",
         "CCAN":"D:/OneDrive/Desktop/E3/E3_signal/E3液冷_X6D12-CCAN_AEBS_V1_14_20251125.dbc",
@@ -39,7 +39,8 @@
             "GasPdlPsnRaw":"GasPdlPsnRaw",
             "RRWheelSpdPulse":"RRWheelSpdPulse",
             "RLWheelSpdPulse":"RLWheelSpdPulse",
-            "FLWheelSpdPulse":"FLWheelSpdPulse"
+            "FLWheelSpdPulse":"FLWheelSpdPulse",
+            "LongAcc": "LongAcc"
         },
         "Tcs_signal":{
             "tcs_algorithm_state": "Tcs algorithm state",

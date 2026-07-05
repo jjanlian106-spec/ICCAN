@@ -3,15 +3,18 @@ import os
 import re
 import numpy as np
 
-from fullt2d import FULLDATAINFO
+from fullt2d import FULLDATAINFO, _to_real
 from iccan_bokeh_report import save_iccan_interactive_html
 
 
 class ICCAN:
     def __init__(self) -> None:
-        self.intpl_data = FULLDATAINFO().composed_data
+        data_info = FULLDATAINFO()
+        self.intpl_data = data_info.composed_data
+        self.raw_data = data_info.data
         self.full_data = self.cal_data(self.intpl_data)
         self.generate_csv(self.full_data)
+        self.generate_raw_csv(self.raw_data)
         self.generate_plot(self.full_data)
 
     @staticmethod
@@ -154,6 +157,35 @@ class ICCAN:
                 f.write(",".join(row) + "\n")
 
         print(f"CSV生成: {csv_path}")
+
+    @staticmethod
+    def generate_raw_csv(raw_data: dict):
+        """导出 BLF 解码后的原始信号（未插值），每个信号单独一个 CSV：time, value。"""
+        signals = raw_data.get("signals") if isinstance(raw_data, dict) else None
+        if not isinstance(signals, dict) or not signals:
+            return
+
+        timestamp = ICCAN.getblf_time()
+        out_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "out", timestamp, "raw")
+        os.makedirs(out_dir, exist_ok=True)
+
+        total_rows = 0
+        for signal_name, series in sorted(signals.items()):
+            if not isinstance(series, dict):
+                continue
+            t_list = series.get("t") or []
+            v_list = series.get("v") or []
+            if not t_list:
+                continue
+
+            csv_path = os.path.join(out_dir, f"{signal_name}.csv")
+            with open(csv_path, "w", encoding="utf-8") as f:
+                f.write("time,value\n")
+                for t, v in zip(t_list, v_list):
+                    f.write(f"{float(t)},{_to_real(v)}\n")
+            total_rows += len(t_list)
+
+        print(f"原始CSV生成: {out_dir} ({len(signals)} 个信号, 共 {total_rows} 条)")
 
     @staticmethod
     def generate_plot(full_data:dict):

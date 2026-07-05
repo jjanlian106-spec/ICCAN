@@ -1,0 +1,1128 @@
+VERSION ""
+
+
+NS_ : 
+	NS_DESC_
+	CM_
+	BA_DEF_
+	BA_
+	VAL_
+	CAT_DEF_
+	CAT_
+	FILTER
+	BA_DEF_DEF_
+	EV_DATA_
+	ENVVAR_DATA_
+	SGTYPE_
+	SGTYPE_VAL_
+	BA_DEF_SGTYPE_
+	BA_SGTYPE_
+	SIG_TYPE_REF_
+	VAL_TABLE_
+	SIG_GROUP_
+	SIG_VALTYPE_
+	SIGTYPE_VALTYPE_
+	BO_TX_BU_
+	BA_DEF_REL_
+	BA_REL_
+	BA_DEF_DEF_REL_
+	BU_SG_REL_
+	BU_EV_REL_
+	BU_BO_REL_
+	SG_MUL_VAL_
+
+BS_:
+
+BU_: ABM IMMO EPS EPBL VCU BCM ESC HVAC EBS VSP
+
+
+BO_ 279 VCU_117: 8 VCU
+ SG_ VCU_117Counter : 7|4@0+ (1,0) [0|15] ""  ESC,BCM
+ SG_ MCU_MotorSpeed_Vd : 8|1@0+ (1,0) [0|1] ""  EBS
+ SG_ CruSysSet : 9|1@0+ (1,0) [0|1] ""  ABM,BCM
+ SG_ CruSysOn : 10|1@0+ (1,0) [0|1] ""  ABM,BCM
+ SG_ BrkPdlPsnVd : 15|1@0+ (1,0) [0|1] ""  BCM
+ SG_ MCU1_MotorRPM : 23|16@0+ (1,-20000) [-20000|45531] "rpm"  ESC,ABM,BCM
+ SG_ BrkPdlPsnNC : 32|1@0+ (1,0) [0|1] ""  ESC,ABM,BCM
+ SG_ BrkPdlPsnNO : 33|1@0+ (1,0) [0|1] ""  ESC,ABM,BCM
+ SG_ GasPdlPsnVd : 38|1@0+ (1,0) [0|1] ""  ESC,BCM
+ SG_ VCU_EngSt1CheckSum : 47|8@0+ (1,0) [0|255] ""  ESC,BCM
+ SG_ GasPdlPsnRaw : 55|8@0+ (0.3937,0) [0|99.9998] "%"  ESC,ABM,BCM
+
+BO_ 268 VCU_10C: 8 VCU
+ SG_ VCU_10CCheckSum : 7|8@0+ (1,0) [0|255] ""  ESC
+ SG_ VCU_10CMsgCounter : 15|4@0+ (1,0) [0|15] ""  ESC
+ SG_ VCUActualTq : 11|12@0+ (0.5,-512) [-512|511] "Nm"  ESC,EBS
+ SG_ DsdDrvTqVd : 28|1@0+ (1,0) [0|1] ""  ESC
+ SG_ VCU_MaxRecyclingTqVd : 30|1@0+ (1,0) [0|1] ""  EBS
+ SG_ VCUActualTqVd : 31|1@0+ (1,0) [0|1] ""  ESC,EBS
+ SG_ VCU_DsdDrvTq : 47|12@0+ (0.5,-512) [-512|511] "Nm"  ESC
+ SG_ VCU_MaxRecyclingTq : 51|12@0+ (0.5,-512) [-512|511] "Nm"  EBS
+
+BO_ 600 VCU_258: 8 VCU
+ SG_ VCU_EngSt2MsgCounter : 7|4@0+ (1,0) [0|15] ""  EPS,BCM
+ SG_ Ready : 0|1@0+ (1,0) [0|1] ""  EPBL,EPS,BCM
+ SG_ VCUKeySta : 3|2@0+ (1,0) [0|3] ""  VSP,BCM
+ SG_ GearPsn : 11|4@0+ (1,0) [0|15] ""  ESC,ABM,VSP,BCM
+ SG_ IMMOFeedback : 12|1@0+ (1,0) [0|1] ""  BCM
+ SG_ DriveModelFd : 15|3@0+ (1,0) [0|7] ""  BCM
+ SG_ HVACPowerlimit : 19|4@0+ (0.5,0) [0|7.5] "kW"  HVAC
+ SG_ HCU_ShiftTipInfo : 23|4@0+ (1,0) [0|15] ""  BCM
+ SG_ VacuumPressureVd : 42|1@0+ (1,0) [0|1] ""  ESC
+ SG_ VacuumPressure : 25|10@0+ (0.2,-108) [-108|5] "Kpa"  ESC
+ SG_ CruVehSpdVd : 41|1@0+ (1,0) [0|1] ""  BCM
+ SG_ HVACHVforbidden : 43|1@0+ (1,0) [0|1] ""  HVAC
+ SG_ BrkBkEgyFd : 46|3@0+ (1,0) [0|7] "" Vector__XXX
+ SG_ VCUBrakelightReq : 47|1@0+ (1,0) [0|1] ""  BCM
+ SG_ CruVehSpd : 40|9@0+ (1,0) [0|300] "km/h"  BCM
+ SG_ VCU_258CheckSum : 63|8@0+ (1,0) [0|255] ""  ESC,EPS,BCM
+
+BO_ 1176 VCU_LearnSeed: 8 VCU
+ SG_ VCULearnSeed0 : 7|64@0+ (1,0) [0|255] ""  IMMO
+
+BO_ 1173 VCU_IMMOReq: 8 VCU
+ SG_ VCUIMMOReq0 : 7|64@0+ (1,0) [0|255] ""  IMMO
+
+BO_ 825 VCU_339: 8 VCU
+ SG_ VCU_339sgCounter : 3|4@0+ (1,0) [0|15] ""  BCM
+ SG_ VCU_339Checksum : 15|8@0+ (1,0) [0|255] ""  BCM
+ SG_ OptPow : 23|8@0+ (1,-40) [-40|214] "kW"  BCM
+ SG_ HVBTpt : 31|8@0+ (1,-50) [-50|200] "℃"  BCM
+ SG_ HVBSOCI : 39|8@0+ (0.5,0) [0|100] "%"  BCM
+ SG_ EgyFlowSta : 47|4@0+ (1,0) [0|15] ""  BCM
+ SG_ ReadyInd : 48|1@0+ (1,0) [0|1] ""  BCM
+ SG_ ChgLineInd : 49|1@0+ (1,0) [0|1] ""  BCM
+ SG_ TMFltInd : 50|1@0+ (1,0) [0|1] ""  BCM
+ SG_ LVBFltInd : 51|1@0+ (1,0) [0|1] ""  BCM
+ SG_ VCUFltInd : 55|2@0+ (1,0) [0|3] ""  BCM
+ SG_ SOCLowInd : 56|1@0+ (1,0) [0|1] ""  BCM
+ SG_ HVBFltInd : 59|1@0+ (1,0) [0|1] ""  BCM
+ SG_ lmtPowInd : 61|1@0+ (1,0) [0|1] ""  BCM
+ SG_ ChgStsInd : 62|1@0+ (1,0) [0|1] ""  BCM
+ SG_ HVBCutInd : 63|1@0+ (1,0) [0|1] ""  BCM
+
+BO_ 595 VCU_253: 8 VCU
+ SG_ VCU_253MsgCounter : 3|4@0+ (1,0) [0|15] ""  BCM
+ SG_ RemKm_Vd : 4|1@0+ (1,0) [0|1] ""  BCM
+ SG_ InsEgyConsptChangeFlg : 5|1@0+ (1,0) [0|1] ""  BCM
+ SG_ AvgEgyConspt : 15|16@0+ (0.1,-3276.8) [-3276.8|3276.7] "kWh/100km"  BCM
+ SG_ InsEgyConspt : 31|16@0+ (0.1,-3276.8) [-3276.8|3276.7] "kWh/100km"  BCM
+ SG_ AvgConsptModeFd : 46|3@0+ (1,0) [0|7] ""  BCM
+ SG_ RemKm : 43|12@0+ (1,0) [0|4095] "km"  BCM
+ SG_ VCU_253Checksum : 63|8@0+ (1,0) [0|255] ""  BCM
+
+BO_ 1093 VCU_445: 8 VCU
+ SG_ VCU_445MsgCounter : 7|4@0+ (1,0) [0|15] ""  BCM
+ SG_ VCUTxt : 15|8@0+ (1,0) [0|255] ""  BCM
+ SG_ PCUEgyConspt : 23|8@0+ (1,0) [0|255] "KW"  BCM
+ SG_ ACEgyConspt : 31|8@0+ (0.1,0) [0|25.5] "KW"  BCM
+ SG_ BrkBkEgy : 39|8@0+ (1,0) [0|255] "KW"  BCM
+ SG_ AllEgyConspt : 47|8@0+ (1,0) [0|255] "KW"  BCM
+ SG_ HVBSOH : 55|8@0+ (1,0) [0|100] "%"  BCM
+ SG_ VCU_445Checksum : 63|8@0+ (1,0) [0|255] ""  BCM
+
+BO_ 1140 VCU_474: 8 VCU
+ SG_ ChgRemTim : 7|12@0+ (1,0) [0|4095] "min"  BCM
+ SG_ PlugSts : 49|2@0+ (1,0) [0|3] ""  VSP,BCM
+ SG_ ChgSta : 51|2@0+ (1,0) [0|3] ""  VSP,BCM
+ SG_ TmgTimesetFlagFDMP5 : 53|2@0+ (1,0) [0|3] "" Vector__XXX
+ SG_ TmgChgShowFB : 55|2@0+ (1,0) [0|3] ""  BCM
+ SG_ CAN_VCU_MP5_CHR_DISSATISFY : 56|1@0+ (1,0) [0|1] ""  BCM
+ SG_ CAN_VCU_MP5_LTPROHB : 58|2@0+ (1,0) [0|3] ""  BCM
+ SG_ ChgStart : 59|1@0+ (1,0) [0|1] ""  BCM
+ SG_ CAN_VCU_MP5_CHR_MODE : 62|3@0+ (1,0) [0|7] ""  BCM
+ SG_ EgyFull : 63|1@0+ (1,0) [0|1] ""  BCM
+
+BO_ 612 VCU_264: 8 VCU
+ SG_ ACONRemKm : 7|16@0+ (1,0) [0|65535] "km"  BCM
+ SG_ ACOFFRemKm : 23|16@0+ (1,0) [0|65535] "km"  BCM
+ SG_ VCU_Voltage : 39|16@0+ (0.01,0) [0|655.34] "V"  HVAC,BCM
+ SG_ VCU_Current : 55|16@0+ (0.1,-1000) [-1000|1000] "A"  BCM
+
+BO_ 596 VCU_254: 8 VCU
+ SG_ HCU_254MsgCounter : 3|4@0+ (1,0) [0|15] "" Vector__XXX
+ SG_ HVACValveState : 4|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ BattValveState : 5|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ VCUThermalSt : 12|4@0+ (1,0) [0|15] "" Vector__XXX
+ SG_ VCU_ACCoolantPress : 8|9@0+ (10,0) [0|5110] "kPa" Vector__XXX
+ SG_ VCU_ACCoolantTemp : 31|8@0+ (1,-50) [-50|205] "℃" Vector__XXX
+ SG_ HCU_254Checksum : 63|8@0+ (1,0) [0|255] "" Vector__XXX
+
+BO_ 597 VCU_255: 8 VCU
+ SG_ VCU_255MsgCounter : 3|4@0+ (1,0) [0|15] "" Vector__XXX
+ SG_ FANPWM_Vd : 4|1@0+ (1,0) [0|1] ""  HVAC
+ SG_ MotorPumpPWM_Vd : 6|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ FANPWMState : 7|1@0+ (1,0) [0|1] ""  HVAC
+ SG_ MotorCoollingTmp : 23|8@0+ (1,-50) [-50|205] "℃" Vector__XXX
+ SG_ FANPWM : 31|8@0+ (1,0) [0|100] "%"  HVAC
+ SG_ MotorPumpPWM : 47|8@0+ (1,0) [0|100] "%" Vector__XXX
+ SG_ BattPumpPWM : 55|8@0+ (1,0) [0|100] "%" Vector__XXX
+ SG_ VCU_255Checksum : 63|8@0+ (1,0) [0|255] "" Vector__XXX
+
+BO_ 804 VCU_324: 8 VCU
+ SG_ HVBOptPow : 15|8@0+ (1,0) [0|100] "%"  BCM
+ SG_ HVAvailablePower : 23|8@0+ (1,0) [0|100] "%"  BCM
+ SG_ EgyRecycleOptPow : 31|8@0+ (1,0) [0|100] "%"  BCM
+ SG_ EgyRecycleAvailablePower : 39|8@0+ (1,0) [0|100] "%"  BCM
+
+BO_ 809 mrECM_SysStHMI2: 8 VCU
+ SG_ RemKMAge_Dyn : 51|12@0+ (1,0) [0|4095] "km"  BCM
+
+BO_ 430 ESC_1AE: 8 ESC
+ SG_ ESC_VehSpdCheckSum : 7|8@0+ (1,0) [0|255] ""  VCU,EPS,EBS,BCM
+ SG_ ABSItvInProgress : 8|1@0+ (1,0) [0|1] ""  VCU,EBS,ABM,BCM
+ SG_ AYCItvInProgress : 9|1@0+ (1,0) [0|1] ""  VCU,EBS,ABM,BCM
+ SG_ TCSItvInProgress : 10|1@0+ (1,0) [0|1] ""  VCU,EBS,ABM,BCM
+ SG_ ESC_VehSpdCounter : 15|4@0+ (1,0) [0|15] ""  VCU,EPS,EBS,BCM
+ SG_ VehSpdVd : 24|1@0+ (1,0) [0|1] ""  VCU,EPS,EBS,ABM,VSP,HVAC,BCM
+ SG_ VehSpd : 23|15@0+ (0.05625,0) [0|299.98] "km/h"  VCU,EPS,EBS,ABM,VSP,HVAC,BCM
+ SG_ EngTqIncReqAct : 36|1@0+ (1,0) [0|1] ""  VCU,BCM
+ SG_ ABSWarningLamp : 37|1@0+ (1,0) [0|1] ""  VCU,EBS,ABM,BCM
+ SG_ ESC_SYS_WarnLamp_EDR : 38|1@0+ (1,0) [0|1] ""  ABM,BCM
+ SG_ EngTqIncReq : 35|12@0+ (0.5,-128) [-128|511] "Nm"  VCU,BCM
+ SG_ EngTqDecReqAct : 52|1@0+ (1,0) [0|1] ""  VCU,ABM,BCM
+ SG_ EBDWarningLamp : 54|1@0+ (1,0) [0|1] ""  EBS,ABM,BCM
+ SG_ EngTqDecReqFast : 51|12@0+ (0.5,-128) [-128|511] "Nm"  VCU,BCM
+
+BO_ 572 ESC_23C: 8 ESC
+ SG_ ESC_FWhlSpdCheckSum : 7|8@0+ (1,0) [0|255] ""  VCU,EBS
+ SG_ ESC_FWhlSpdCounter : 15|4@0+ (1,0) [0|15] ""  VCU,EBS
+ SG_ WhlSpdFRVd : 38|2@0+ (1,0) [0|3] ""  VCU,EBS
+ SG_ WhlSpdFR : 36|13@0+ (0.05625,0) [0|299.981] "km/h"  VCU,EBS
+ SG_ WhlSpdFLVd : 54|2@0+ (1,0) [0|3] ""  VCU,EBS
+ SG_ WhlSpdFL : 52|13@0+ (0.05625,0) [0|299.981] "km/h"  VCU,EBS
+
+BO_ 573 ESC_23D: 8 ESC
+ SG_ ESC_RWhlSpdCheckSum : 7|8@0+ (1,0) [0|255] ""  VCU,EBS
+ SG_ ESC_RWhlSpdCounter : 15|4@0+ (1,0) [0|15] ""  VCU,EBS
+ SG_ WhlSpdRRVd : 38|2@0+ (1,0) [0|3] ""  VCU,EBS
+ SG_ WhlSpdRR : 36|13@0+ (0.05625,0) [0|299.981] "km/h"  VCU,EBS
+ SG_ WhlSpdRLVd : 54|2@0+ (1,0) [0|3] ""  VCU,EBS
+ SG_ WhlSpdRL : 52|13@0+ (0.05625,0) [0|299.981] "km/h"  VCU,EBS
+
+BO_ 810 ESC_32A: 8 ESC
+ SG_ ESC_WhlSpdDirCheckSum : 7|8@0+ (1,0) [0|255] ""  VCU,EBS
+ SG_ FLWheelDir : 9|2@0+ (1,0) [0|3] ""  VCU,EBS
+ SG_ FRWheelDir : 11|2@0+ (1,0) [0|3] ""  VCU,EBS
+ SG_ RLWheelDir : 13|2@0+ (1,0) [0|3] ""  VCU,EBS
+ SG_ RRWheelDir : 15|2@0+ (1,0) [0|3] ""  VCU,EBS
+ SG_ ESC_WhlSpdDirCounter : 23|4@0+ (1,0) [0|15] ""  VCU,EBS
+ SG_ RRWheelSpdPulse : 19|11@0+ (1,0) [0|2046] "Pluse"  VCU,EBS
+ SG_ RLWheelSpdPulse : 24|11@0+ (1,0) [0|2046] "Pluse"  VCU,EBS
+ SG_ FRWheelSpdPulse : 45|11@0+ (1,0) [0|2046] "Pluse"  VCU,EBS
+ SG_ FLWheelSpdPulse : 50|11@0+ (1,0) [0|2046] "Pluse"  VCU,EBS
+
+BO_ 517 ESC_205: 8 ESC
+ SG_ YawRate : 7|16@0- (0.01,0) [-100|100] "degree/s"  EBS,ABM,BCM
+ SG_ LongAccVd : 18|1@0+ (1,0) [0|1] ""  VCU,EBS,BCM
+ SG_ HDCStatus : 20|2@0+ (1,0) [0|3] ""  BCM
+ SG_ YawRateVd : 21|1@0+ (1,0) [0|1] ""  EBS,BCM
+ SG_ LongAcc : 17|10@0+ (0.01,-1.27) [-1.27|1.27] "g"  VCU,EBS,BCM
+ SG_ AYCFailure : 32|1@0+ (1,0) [0|1] ""  VCU,BCM
+ SG_ EBDFailure : 33|1@0+ (1,0) [0|1] ""  VCU,BCM
+ SG_ ABSFailure : 34|1@0+ (1,0) [0|1] ""  VCU,BCM
+ SG_ TCSFailure : 35|1@0+ (1,0) [0|1] ""  VCU,BCM
+ SG_ ESC_AccelStaCheckSum : 47|8@0+ (1,0) [0|255] ""  VCU,BCM
+ SG_ BrkPrsVd : 51|1@0+ (1,0) [0|1] ""  VCU,EBS,BCM
+ SG_ ESC_AccelStaCounter : 55|4@0+ (1,0) [0|15] ""  VCU,BCM
+ SG_ BrkPrs : 50|11@0+ (0.1,0) [0|190] "bar"  VCU,EBS,BCM
+
+BO_ 533 ESC_215: 8 ESC
+ SG_ ESC_ESCStCheckSum : 7|8@0+ (1,0) [0|255] ""  BCM
+ SG_ ESCSw : 8|1@0+ (1,0) [0|1] ""  BCM
+ SG_ ESCSwVd : 9|1@0+ (1,0) [0|1] ""  BCM
+ SG_ ECDActive : 10|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ ECDAvailable : 11|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ ESC_ESCStCounter : 15|4@0+ (1,0) [0|15] ""  BCM
+ SG_ EPBRequest : 17|2@0+ (1,0) [0|3] ""  EPBL
+ SG_ AutoHoldActive : 18|1@0+ (1,0) [0|1] ""  VCU,BCM
+ SG_ AutoHoldAvailable : 36|1@0+ (1,0) [0|1] ""  VCU,BCM
+ SG_ AutoholdFailure : 20|1@0+ (1,0) [0|1] ""  VCU,BCM
+ SG_ HSAActive : 21|1@0+ (1,0) [0|1] ""  BCM
+ SG_ HSAFailure : 22|1@0+ (1,0) [0|1] ""  BCM
+ SG_ AutoHazardBlinking : 25|2@0+ (1,0) [0|3] ""  BCM
+ SG_ GSensorCalibrationSt : 29|2@0+ (1,0) [0|3] ""  BCM
+ SG_ AutoHoldSWStsVd : 30|1@0+ (1,0) [0|1] ""  VCU,BCM
+ SG_ AutoHoldSWSts : 31|1@0+ (1,0) [0|1] ""  VCU,BCM
+ SG_ LatAccVd : 34|1@0+ (1,0) [0|1] ""  EBS,BCM
+ SG_ LatAcc : 33|10@0+ (0.01,-1.27) [-1.27|1.27] "g"  EBS,BCM
+
+BO_ 682 EPB_EPBSt: 8 EPBL
+ SG_ BrakelightReq : 7|2@0+ (1,0) [0|3] ""  BCM
+ SG_ DecReqEnable : 8|1@0+ (1,0) [0|1] ""  ESC
+ SG_ EPBDiagStauts : 13|2@0+ (1,0) [0|3] "" Vector__XXX
+ SG_ Autoholdsupportstatus : 15|2@0+ (1,0) [0|3] ""  ESC
+ SG_ DecReq : 23|8@0+ (0.048,-7.968) [-7.968|4.224] "m/s2" Vector__XXX
+ SG_ EPBSts : 26|3@0+ (1,0) [0|7] ""  VCU,ESC,ABM
+ SG_ EPBSWStsVd : 27|1@0+ (1,0) [0|1] ""  ESC
+ SG_ EPBSWSts : 29|2@0+ (1,0) [0|3] ""  VCU,ESC
+ SG_ FailureLampSts : 33|2@0+ (1,0) [0|3] ""  VCU,ABM,BCM
+ SG_ FunctionLampSts : 35|2@0+ (1,0) [0|3] ""  BCM
+ SG_ SoundWarningSts : 37|2@0+ (1,0) [0|3] "" Vector__XXX
+ SG_ ClampForce : 44|5@0+ (1,0) [0|31] ""  ESC
+ SG_ EPB_StatusCounter : 51|4@0+ (1,0) [0|15] ""  ESC
+ SG_ DisplayInfo : 55|4@0+ (1,0) [0|15] ""  BCM
+ SG_ EPB_StatusChecksum : 63|8@0+ (1,0) [0|255] ""  ESC
+
+BO_ 698 EPBR_2BA: 8 EPBL
+ SG_ EPBDiagStauts_R : 13|2@0+ (1,0) [0|3] "" Vector__XXX
+ SG_ EPBSts_R : 26|3@0+ (1,0) [0|7] "" Vector__XXX
+ SG_ ClampForce_R : 44|5@0+ (1,0) [0|31] "" Vector__XXX
+ SG_ EPB_StatusCounter_R : 51|4@0+ (1,0) [0|15] "" Vector__XXX
+ SG_ EPB_StatusChecksum_R : 63|8@0+ (1,0) [0|255] "" Vector__XXX
+
+BO_ 675 EPS_2A3: 8 EPS
+ SG_ EPSFailure : 0|1@0+ (1,0) [0|1] ""  BCM
+ SG_ EPS_StrModeFeedback : 2|2@0+ (1,0) [0|3] ""  BCM
+ SG_ EPS_TorqSensorStatus : 4|1@0+ (1,0) [0|1] ""  BCM
+ SG_ EPS_CurrentConsumption : 15|16@0+ (0.00571,0) [0|120] "A"  BCM
+ SG_ EPS_SteeringTorque : 31|8@0+ (0.1794,-22.78) [-8|8] "Nm"  BCM
+ SG_ EPSSWVer : 47|8@0+ (1,0) [0|255] ""  BCM
+ SG_ EPSHWVer : 55|8@0+ (1,0) [0|255] ""  BCM
+ SG_ EPSDTC : 63|8@0+ (1,0) [0|255] ""  BCM
+
+BO_ 309 EPS_135: 8 EPS
+ SG_ EPS_SASChecksum : 7|8@0+ (1,0) [0|255] ""  BCM
+ SG_ EPS_SASMsgCounter : 11|4@0+ (1,0) [0|15] ""  BCM
+ SG_ SAS_FailureSts : 12|1@0+ (1,0) [0|1] ""  ABM,BCM
+ SG_ SAS_CalibrationSts : 13|1@0+ (1,0) [0|1] ""  ABM,BCM
+ SG_ SteeringWheelAngle : 23|16@0+ (0.1,-738) [-738|738] "°"  ABM,BCM
+ SG_ SteeringWheelRotSpd : 39|8@0+ (4,0) [0|1016] "°/s"  BCM
+ SG_ SteeringWheelRotDir : 40|1@0+ (1,0) [0|1] ""  BCM
+
+BO_ 297 EBS_129: 8 EBS
+ SG_ EBS_129Counter : 7|4@0+ (1,0) [0|15] ""  VCU
+ SG_ EBS_FaultSts : 23|2@0+ (1,0) [0|3] ""  VCU
+ SG_ EBS_PushRodStroke : 3|12@0+ (0.015625,-5) [-5|47] "mm"  VCU
+ SG_ EBS_RecuBrkTrqReq : 21|14@0+ (0.1,0) [0|1000] "Nm"  VCU
+ SG_ EBS_RecuBrkTrqReqSts : 53|1@0+ (1,0) [0|1] ""  VCU
+ SG_ EBS_HBCRequest : 52|1@0+ (1,0) [0|1] ""  VCU
+ SG_ EBS_BrakePedalApplied : 51|1@0+ (1,0) [0|1] ""  VCU
+ SG_ EBS_BrakePed_VD : 50|1@0+ (1,0) [0|1] ""  VCU
+ SG_ EBS_PushRodStrokeSt : 49|2@0+ (1,0) [0|3] ""  VCU
+ SG_ EBS_BrkPrsVd : 54|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ EBS_BrkPrs : 34|11@0+ (0.1,0) [0|190] "bar" Vector__XXX
+ SG_ EBS_129Checksum : 63|8@0+ (1,0) [0|255] ""  VCU
+
+BO_ 125 ABM_7D: 8 ABM
+ SG_ AirbagFailSts : 17|2@0+ (1,0) [0|3] ""  VCU,BCM
+ SG_ CrashInfo : 8|1@0+ (1,0) [0|1] ""  VCU,BCM
+ SG_ SRS_StatusCheckSum : 7|8@0+ (1,0) [0|255] ""  VCU,BCM
+ SG_ SRS_StatusCounter : 15|4@0+ (1,0) [0|15] ""  VCU,BCM
+
+BO_ 1777 VSP_6F1: 8 VSP
+ SG_ VSPHWVer : 55|8@0+ (1,0) [0|255] "" Vector__XXX
+ SG_ VSPSWVer : 63|8@0+ (1,0) [0|255] "" Vector__XXX
+ SG_ VSPDTC : 47|8@0+ (1,0) [0|255] ""  BCM
+
+BO_ 945 AC_3B1: 8 HVAC
+ SG_ ModeDisp : 27|4@0+ (1,0) [0|15] "" Vector__XXX
+ SG_ RmtACReqFb : 7|2@0+ (1,0) [0|3] "" Vector__XXX
+ SG_ HVAC_State : 28|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ SetTemDisp : 39|8@0+ (0.1,17) [17|32] "°C" Vector__XXX
+ SG_ ExtTempVd : 48|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ HVAC_RearDefrost : 51|1@0+ (1,0) [0|1] ""  BCM
+ SG_ BlowerLvl : 55|4@0+ (1,0) [0|15] ""  VCU
+ SG_ ExtTemp : 63|8@0+ (1,-55) [-55|70] "°C"  BCM
+
+BO_ 947 AC_3B3: 8 HVAC
+ SG_ IndicatorAutoFront : 1|1@0+ (1,0) [0|1] ""  BCM
+ SG_ IndicatorDefrostFront : 2|1@0+ (1,0) [0|1] ""  BCM
+ SG_ IndicatorACFront : 3|1@0+ (1,0) [0|1] ""  BCM
+ SG_ IndicatorOFFFront : 4|1@0+ (1,0) [0|1] ""  BCM
+ SG_ IndicatorIntakeFront : 5|1@0+ (1,0) [0|1] ""  BCM
+ SG_ InternalRecycle : 6|1@0+ (1,0) [0|1] ""  BCM
+ SG_ HURequest : 59|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ HUCancel : 60|1@0+ (1,0) [0|1] "" Vector__XXX
+
+BO_ 952 AC_3B8: 8 HVAC
+ SG_ EvapTpt : 39|8@0+ (1,-40) [-40|125] "℃"  VCU
+ SG_ ACeComprSpdReqHVAC : 47|16@0+ (1,0) [0|8000] "rpm"  VCU
+ SG_ ACReqHVAC : 56|1@0+ (1,0) [0|1] ""  VCU
+
+BO_ 1077 AC_435: 8 HVAC
+ SG_ ACPTCPwrReq : 39|16@0+ (1,0) [0|4500] "W"  VCU
+ SG_ PTCTpt : 23|8@0+ (1,-40) [-40|150] "℃" Vector__XXX
+ SG_ PTCRly1Ctl : 27|2@0+ (1,0) [0|3] ""  VCU
+ SG_ PTCRly2Ctl : 29|2@0+ (1,0) [0|3] ""  VCU
+
+BO_ 1084 AC_43C: 8 HVAC
+ SG_ ACDCT : 55|16@0+ (1,0) [0|255] ""  BCM
+
+BO_ 1080 AC_438: 8 HVAC
+ SG_ SWVersionY : 7|4@0+ (1,2014) [2014|2029] "" Vector__XXX
+ SG_ SWVersionM : 3|4@0+ (1,0) [0|12] "" Vector__XXX
+ SG_ SWVersionD : 15|8@0+ (1,0) [0|31] "" Vector__XXX
+ SG_ ACHWVer : 23|8@0+ (1,0) [0|255] ""  BCM
+ SG_ ACReq : 57|1@0+ (1,0) [0|1] ""  BCM
+
+BO_ 1297 IMMO_LearnKey: 8 IMMO
+ SG_ PEPS_IMMO_LearnKey : 7|64@0+ (1,0) [0|255] ""  VCU
+
+BO_ 1239 IMMO_Response: 8 IMMO
+ SG_ PEPS_IMMO_Response : 7|64@0+ (1,0) [0|255] ""  VCU
+
+BO_ 937 GW_3A9: 8 BCM
+ SG_ OdometerInfoVd : 15|1@0+ (1,0) [0|1] ""  VCU,EBS
+ SG_ OdometerInfo : 47|24@0+ (0.1,0) [0|999999] "Km"  VCU,EBS
+
+BO_ 500 GW_1F4: 8 BCM
+ SG_ Poslamp : 2|1@0+ (1,0) [0|1] ""  VCU
+ SG_ Trunk_BackDoor_Sts : 3|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ PsgDoorStatus : 4|1@0+ (1,0) [0|1] ""  EBS
+ SG_ RRDoorStatus : 5|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ RLDoorStatus : 6|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ DRVUnlockState : 7|1@0+ (1,0) [0|1] ""  VCU
+ SG_ DefrostCtrl : 8|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ DrvDoorStatus : 10|1@0+ (1,0) [0|1] ""  VCU
+ SG_ HeadLampLowBeamCtrl : 12|1@0+ (1,0) [0|1] ""  VCU
+ SG_ HeadLampHighBeamCtrl : 13|1@0+ (1,0) [0|1] ""  VCU
+ SG_ LDW_SWSet : 15|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ KeyState_GW : 18|3@0+ (1,0) [0|7] ""  VCU,HVAC
+ SG_ HoodStatus : 19|1@0+ (1,0) [0|1] ""  VCU
+ SG_ OccupantDetDRVSide : 20|1@0+ (1,0) [0|1] ""  VCU,EPBL,EBS,ABM
+ SG_ AEBSet : 21|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ TurnSwitch_GW : 23|2@0+ (1,0) [0|3] ""  VCU,EPBL,ABM
+ SG_ FrontWiperStatus_GW : 25|2@0+ (1,0) [0|3] "" Vector__XXX
+ SG_ DirIndicationLeft_GW : 32|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ DirIndicationRight_GW : 33|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ HazardWarningLightStatus : 34|1@0+ (1,0) [0|1] ""  EPBL,ABM
+ SG_ BCM_KeyState_VD : 38|2@0+ (1,0) [0|3] ""  VCU
+ SG_ Checksumof1F4 : 47|8@0+ (1,0) [0|255] ""  VCU
+ SG_ TurnSwitchVd : 51|1@0+ (1,0) [0|1] ""  VCU
+ SG_ Counterof1F4 : 55|4@0+ (1,0) [0|15] ""  VCU
+ SG_ StrModeSelect : 63|2@0+ (1,0) [0|3] ""  EPS
+
+BO_ 1413 TBOX_585: 8 BCM
+ SG_ OneHourWakeupflag : 49|2@0+ (1,0) [0|3] ""  VCU,ABM
+ SG_ Year : 47|8@0+ (1,2000) [2000|2255] ""  VCU,EBS,ABM
+ SG_ Mon : 39|8@0+ (1,0) [0|12] ""  VCU,EBS,ABM
+ SG_ Date : 31|8@0+ (1,0) [0|31] ""  VCU,EBS,ABM
+ SG_ Hour : 23|8@0+ (1,0) [0|24] ""  VCU,EBS,ABM
+ SG_ Mint : 15|8@0+ (1,0) [0|59] ""  VCU,EBS,ABM
+ SG_ Sec : 7|8@0+ (1,0) [0|59] ""  VCU,EBS,ABM
+ SG_ TimTyp : 55|2@0+ (1,0) [0|3] ""  VCU,EBS,ABM
+ SG_ TBOXDTC : 63|8@0+ (1,0) [0|255] ""  VCU,ABM
+
+BO_ 791 TPMS_317: 8 BCM
+ SG_ FLTirePres : 7|8@0+ (2.75,0) [0|698.5] "kpa" Vector__XXX
+ SG_ FRTirePres : 15|8@0+ (2.75,0) [0|698.5] "kpa" Vector__XXX
+ SG_ RLTirePres : 23|8@0+ (2.75,0) [0|698.5] "kpa" Vector__XXX
+ SG_ RRTirePres : 31|8@0+ (2.75,0) [0|698.5] "kpa" Vector__XXX
+ SG_ FLPressureWarning : 34|3@0+ (1,0) [0|7] "" Vector__XXX
+ SG_ FRPressureWarning : 37|3@0+ (1,0) [0|7] "" Vector__XXX
+ SG_ RLPressureWarning : 42|3@0+ (1,0) [0|7] "" Vector__XXX
+ SG_ RRPressureWarning : 45|3@0+ (1,0) [0|7] "" Vector__XXX
+ SG_ FLTempHigh : 46|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ FRTempHigh : 47|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ RLTempHigh : 48|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ RRTempHigh : 49|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ StudyMode : 50|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ SystemWarning : 51|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ StudyFailureWarning : 52|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ TireWarning : 55|1@0+ (1,0) [0|1] ""  ABM
+
+BO_ 683 BCM_2AB: 8 BCM
+ SG_ SecurityStatus : 0|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ SecurityAlarm : 1|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ DrvLockCommand : 5|4@0+ (1,0) [0|15] ""  VCU
+ SG_ KSEnable : 7|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ DRLLamp : 9|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ DayNightStatus : 10|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ BCM_RemoteKeyID : 13|3@0+ (1,0) [0|7] "" Vector__XXX
+ SG_ BackLightControl : 15|2@0+ (1,0) [0|3] "" Vector__XXX
+ SG_ LockCtrl : 23|8@0+ (1,0) [0|255] "" Vector__XXX
+ SG_ BCM_BackLightLvl : 31|8@0+ (0.4,0) [14.4|86.4] "%" Vector__XXX
+ SG_ DirIndicationLeft : 32|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ DirIndicationRight : 33|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ TurnSwitch : 35|2@0+ (1,0) [0|3] "" Vector__XXX
+ SG_ HandBrakingStatus : 36|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ KeyState : 42|3@0+ (1,0) [0|7] "" Vector__XXX
+ SG_ BCM_KeyState_VD : 44|2@0+ (1,0) [0|3] "" Vector__XXX
+ SG_ TurnSwitchVd : 45|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ WiperStatus : 47|2@0+ (1,0) [0|3] "" Vector__XXX
+ SG_ KeyOnCounter : 55|16@0+ (1,0) [0|65534] "" Vector__XXX
+
+BO_ 1532 TBOX_5FC: 8 BCM
+ SG_ RmtACReq : 9|2@0+ (1,0) [0|3] ""  VCU,HVAC
+ SG_ RmtChgReq : 11|2@0+ (1,0) [0|3] ""  VCU
+ SG_ LVBChgCmd : 13|2@0+ (1,0) [0|3] ""  VCU
+ SG_ MPPreHeatMode : 18|3@0+ (1,0) [0|7] ""  VCU
+ SG_ RmtACReqTpt : 29|6@0+ (0.5,0) [0|30] "℃"  HVAC
+
+BO_ 1305 ICM_519: 8 BCM
+ SG_ ICM_mode_status : 7|2@0+ (1,0) [0|3] "" Vector__XXX
+ SG_ Maintenance_mileageInfo : 5|14@0+ (1,0) [0|10000] "" Vector__XXX
+ SG_ Maintenance_daysInfo : 23|8@0+ (1,0) [0|180] "" Vector__XXX
+ SG_ Maintenancealert : 25|2@0+ (1,0) [0|3] "" Vector__XXX
+ SG_ OtaUpdataQuery : 26|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ MFSStatu : 27|1@0+ (1,0) [0|1] ""  VCU
+ SG_ DriverModeSet : 34|3@0+ (1,0) [0|7] ""  VCU
+ SG_ BrkBkEgyReq : 37|3@0+ (1,0) [0|7] ""  VCU
+ SG_ StrModeSelect : 39|2@0+ (1,0) [0|3] ""  EPS
+ SG_ TABButtonReq : 41|2@0+ (1,0) [0|3] ""  EPBL
+ SG_ PButtonReq : 43|2@0+ (1,0) [0|3] ""  EPBL
+ SG_ VSPswich : 44|1@0+ (1,0) [0|3] ""  VSP
+ SG_ OtaFeedback : 30|1@0+ (1,0) [0|1] "" Vector__XXX
+
+
+
+CM_ SG_ 279 VCU_117Counter "消息计数器";
+CM_ SG_ 279 MCU_MotorSpeed_Vd "驱动电机_当前实际转速信号有效标志位";
+CM_ SG_ 279 CruSysSet "巡航功能激活状态";
+CM_ SG_ 279 CruSysOn "巡航主开关状态";
+CM_ SG_ 279 BrkPdlPsnVd "制动开关信号有效位";
+CM_ SG_ 279 MCU1_MotorRPM "驱动电机_电机转速";
+CM_ SG_ 279 BrkPdlPsnNC "刹车踏板常闭开关状态";
+CM_ SG_ 279 BrkPdlPsnNO "
+刹车踏板常开开关状态-制动灯开关";
+CM_ SG_ 279 GasPdlPsnVd "
+加速踏板开度有效位";
+CM_ SG_ 279 VCU_EngSt1CheckSum "checksum";
+CM_ SG_ 279 GasPdlPsnRaw "真实加速踏板开度";
+CM_ SG_ 268 VCU_10CMsgCounter "
+消息计数器";
+CM_ SG_ 268 VCUActualTq "驱动电机输出扭矩";
+CM_ SG_ 268 DsdDrvTqVd "驾驶员期待有效扭矩";
+CM_ SG_ 268 VCU_MaxRecyclingTqVd "最大可回收扭矩有效位";
+CM_ SG_ 268 VCUActualTqVd "实际扭矩有效位";
+CM_ SG_ 268 VCU_DsdDrvTq "驾驶员期望扭矩";
+CM_ SG_ 268 VCU_MaxRecyclingTq "最大可回收扭矩,发送正值，轮边扭矩/总速比";
+CM_ SG_ 600 VCU_EngSt2MsgCounter "消息计数器";
+CM_ SG_ 600 Ready "运行状态";
+CM_ SG_ 600 VCUKeySta "钥匙状态
+0x0:OFF&ACC档
+0x1:ON档，车辆未进入READY状态
+0x2:车辆的进行READY状态";
+CM_ SG_ 600 GearPsn "显示档位";
+CM_ SG_ 600 IMMOFeedback "IMMO认证反馈";
+CM_ SG_ 600 DriveModelFd "驾驶模式";
+CM_ SG_ 600 HVACPowerlimit "空调系统功率限制";
+CM_ SG_ 600 VacuumPressureVd "制动真空度有效位";
+CM_ SG_ 600 VacuumPressure "制动真空度信号";
+CM_ SG_ 600 CruVehSpdVd "车辆巡航速度有效位";
+CM_ SG_ 600 HVACHVforbidden "空调系统高压禁止";
+CM_ SG_ 600 BrkBkEgyFd "滑行能量回收设置反馈";
+CM_ SG_ 600 VCUBrakelightReq "点亮制动灯请求";
+CM_ SG_ 600 CruVehSpd "车辆巡航速度";
+CM_ SG_ 1176 VCULearnSeed0 "VCU教学IMMO的SK";
+CM_ SG_ 1173 VCUIMMOReq0 "VCU的IMMO认证请求";
+CM_ SG_ 825 VCU_339sgCounter "Rolling counter信号，每个发送周期加1，循环计数，0到15循环";
+CM_ SG_ 825 VCU_339Checksum "按照JAC checksum规范";
+CM_ SG_ 825 OptPow "功率数值";
+CM_ SG_ 825 HVBTpt "电池温度";
+CM_ SG_ 825 HVBSOCI "电池SOC";
+CM_ SG_ 825 EgyFlowSta "能量流状态";
+CM_ SG_ 825 ReadyInd "READY指示灯";
+CM_ SG_ 825 ChgLineInd "充电线连接指示灯";
+CM_ SG_ 825 TMFltInd "电机故障警示灯";
+CM_ SG_ 825 LVBFltInd "12V电池故障警示灯";
+CM_ SG_ 825 VCUFltInd "系统故障警示灯";
+CM_ SG_ 825 SOCLowInd "低电荷报警（仪表接收）";
+CM_ SG_ 825 HVBFltInd "动力电池故障警示灯";
+CM_ SG_ 825 lmtPowInd "限功率指示灯";
+CM_ SG_ 825 ChgStsInd "充电状态指示灯";
+CM_ SG_ 825 HVBCutInd "动力电池切断指示灯";
+CM_ SG_ 595 VCU_253MsgCounter "Rolling counter信号，每个发送周期加1，循环计数，0到15循环";
+CM_ SG_ 595 RemKm_Vd "续航里程有效位";
+CM_ SG_ 595 InsEgyConsptChangeFlg "瞬时能耗数值改变提示标志位";
+CM_ SG_ 595 AvgEgyConspt "平均能耗";
+CM_ SG_ 595 InsEgyConspt "瞬时能耗:";
+CM_ SG_ 595 AvgConsptModeFd "平均能耗用户选择按钮反馈";
+CM_ SG_ 595 RemKm "综合续航里程";
+CM_ SG_ 595 VCU_253Checksum "按照JAC checksum规范";
+CM_ SG_ 1093 VCUTxt "仪表显示信息";
+CM_ SG_ 1093 PCUEgyConspt "电驱动消耗能量";
+CM_ SG_ 1093 ACEgyConspt "空调开启消耗能量:";
+CM_ SG_ 1093 BrkBkEgy "能量回收装置回收的能量:";
+CM_ SG_ 1093 AllEgyConspt "总消耗能量";
+CM_ SG_ 1093 HVBSOH "电池SOH
+转发BMS的SOH信号";
+CM_ SG_ 1140 ChgRemTim "电量充满剩余时间（h）
+根据慢充或快充的充电电流和SOC状态，计算出充满剩余时间。";
+CM_ SG_ 1140 PlugSts "充电插头状态";
+CM_ SG_ 1140 ChgSta "充电标志位";
+CM_ SG_ 1140 TmgTimesetFlagFDMP5 "定时充电设置标志位反馈(MP5)";
+CM_ SG_ 1140 TmgChgShowFB "0:初始值； 1:按钮显示开始充电（用户点击时发送TmgUserReqtmgEnd==1）；2:按钮显示停止充电（用户点击时发送TmgUserReqtmgEnd==2）Tmgchg保持发送 10s";
+CM_ SG_ 1140 CAN_VCU_MP5_CHR_DISSATISFY "充电条件不满足";
+CM_ SG_ 1140 CAN_VCU_MP5_LTPROHB "禁止低温充电提示";
+CM_ SG_ 1140 ChgStart "充电开始";
+CM_ SG_ 1140 CAN_VCU_MP5_CHR_MODE "充电模式信息";
+CM_ SG_ 1140 EgyFull "电量已充满语句";
+CM_ SG_ 612 ACONRemKm "AC开启剩余里程";
+CM_ SG_ 612 ACOFFRemKm "AC关闭剩余里程";
+CM_ SG_ 612 VCU_Voltage "整车电压，未上高压发送0xFFFF";
+CM_ SG_ 612 VCU_Current "电池电流，未上高压发送0xFFFF";
+CM_ SG_ 596 HCU_254MsgCounter "Rolling counter信号，每个发送周期加1，循环计数，0到15循环";
+CM_ SG_ 596 HVACValveState "空调冷媒截止阀状态
+0x0:截止阀关闭，冷媒可通过
+0x1:截止阀工作，冷媒不能通过";
+CM_ SG_ 596 BattValveState "电池冷媒截止阀状态
+0x0:截止阀关闭，冷媒可通过
+0x1:截止阀工作，冷媒不能通过";
+CM_ SG_ 596 VCUThermalSt "整车热管理工作状态";
+CM_ SG_ 596 VCU_ACCoolantPress "空调冷媒压力";
+CM_ SG_ 596 VCU_ACCoolantTemp "空调冷媒温度";
+CM_ SG_ 596 HCU_254Checksum "按照JAC checksum规范";
+CM_ SG_ 597 VCU_255MsgCounter "Rolling counter信号，每个发送周期加1，循环计数，0到15循环";
+CM_ SG_ 597 FANPWM_Vd "冷却风扇PWM有效位";
+CM_ SG_ 597 MotorPumpPWM_Vd "电机冷却水泵PWM有效位";
+CM_ SG_ 597 FANPWMState "冷却风扇开启状态";
+CM_ SG_ 597 MotorCoollingTmp "电机冷却液温度";
+CM_ SG_ 597 FANPWM "冷却风扇PWM";
+CM_ SG_ 597 MotorPumpPWM "电机冷却水泵PWM";
+CM_ SG_ 597 BattPumpPWM "电池冷却水泵PWM";
+CM_ SG_ 597 VCU_255Checksum "按照JAC checksum规范";
+CM_ SG_ 804 HVBOptPow "驱动瞬时功率";
+CM_ SG_ 804 HVAvailablePower "驱动可用剩余功率";
+CM_ SG_ 804 EgyRecycleOptPow "能量回收瞬时功率";
+CM_ SG_ 804 EgyRecycleAvailablePower "能量回收可用剩余功率";
+CM_ SG_ 809 RemKMAge_Dyn "WLTC动态续驶里程";
+CM_ SG_ 430 ESC_VehSpdCheckSum "Message CheckSum";
+CM_ SG_ 430 ABSItvInProgress "ABS功能执行";
+CM_ SG_ 430 AYCItvInProgress "AYC功能执行";
+CM_ SG_ 430 TCSItvInProgress "TCS功能执行";
+CM_ SG_ 430 ESC_VehSpdCounter "Message counter";
+CM_ SG_ 430 VehSpdVd "车速值有效位";
+CM_ SG_ 430 VehSpd "车速值";
+CM_ SG_ 430 EngTqIncReqAct "
+ESC增扭请求有效性";
+CM_ SG_ 430 ABSWarningLamp "ABS故障灯";
+CM_ SG_ 430 ESC_SYS_WarnLamp_EDR "ESC故障灯";
+CM_ SG_ 430 EngTqIncReq "ESC增扭请求";
+CM_ SG_ 430 EngTqDecReqAct "ESC降扭请求有效性";
+CM_ SG_ 430 EBDWarningLamp "EBD故障灯";
+CM_ SG_ 430 EngTqDecReqFast "
+ESC降扭请求";
+CM_ SG_ 572 ESC_FWhlSpdCheckSum "Message CheckSum";
+CM_ SG_ 572 ESC_FWhlSpdCounter "Message counter";
+CM_ SG_ 572 WhlSpdFRVd "右前轮速有效位";
+CM_ SG_ 572 WhlSpdFR "右前轮速";
+CM_ SG_ 572 WhlSpdFLVd "左前轮速有效位";
+CM_ SG_ 572 WhlSpdFL "左前轮速";
+CM_ SG_ 573 ESC_RWhlSpdCheckSum "Message CheckSum";
+CM_ SG_ 573 ESC_RWhlSpdCounter "Message counter";
+CM_ SG_ 573 WhlSpdRRVd "右后轮速有效位";
+CM_ SG_ 573 WhlSpdRR "右后轮速";
+CM_ SG_ 573 WhlSpdRLVd "
+左后轮速有效位";
+CM_ SG_ 573 WhlSpdRL "左后轮速";
+CM_ SG_ 810 ESC_WhlSpdDirCheckSum "Message CheckSum";
+CM_ SG_ 810 FLWheelDir "左前轮转动方向";
+CM_ SG_ 810 FRWheelDir "右前轮转动方向";
+CM_ SG_ 810 RLWheelDir "左后轮转动方向";
+CM_ SG_ 810 RRWheelDir "右后轮转动方向";
+CM_ SG_ 810 ESC_WhlSpdDirCounter "Message counter";
+CM_ SG_ 810 RRWheelSpdPulse "右后轮脉冲计数";
+CM_ SG_ 810 RLWheelSpdPulse "右后轮脉冲计数";
+CM_ SG_ 810 FRWheelSpdPulse "右前轮脉冲计数";
+CM_ SG_ 810 FLWheelSpdPulse "左前轮脉冲计数";
+CM_ SG_ 517 YawRate "横摆角速度";
+CM_ SG_ 517 LongAccVd "
+纵向加速度有效位";
+CM_ SG_ 517 HDCStatus "HDC工作状态";
+CM_ SG_ 517 YawRateVd "横摆角速度有效位";
+CM_ SG_ 517 LongAcc "纵向加速度";
+CM_ SG_ 517 AYCFailure "AYC故障";
+CM_ SG_ 517 EBDFailure "EBD故障";
+CM_ SG_ 517 ABSFailure "ABS故障";
+CM_ SG_ 517 TCSFailure "CS故障";
+CM_ SG_ 517 ESC_AccelStaCheckSum "Message CheckSum";
+CM_ SG_ 517 BrkPrsVd "刹车压力有效位";
+CM_ SG_ 517 ESC_AccelStaCounter "Message counter";
+CM_ SG_ 517 BrkPrs "刹车压力";
+CM_ SG_ 533 ESC_ESCStCheckSum "Message CheckSum";
+CM_ SG_ 533 ESCSw "ESC系统状态";
+CM_ SG_ 533 ESCSwVd "ESC系统状态有效位";
+CM_ SG_ 533 ECDActive "Electronic Control Deceleration Active
+ECD功能执行";
+CM_ SG_ 533 ECDAvailable "Electronic Control Deceleration Available
+ECD功能有效";
+CM_ SG_ 533 ESC_ESCStCounter "Message counter";
+CM_ SG_ 533 AutoHoldActive "AutoHold功能执行";
+CM_ SG_ 533 AutoHoldAvailable "AutoHold功能可用";
+CM_ SG_ 533 AutoholdFailure " AutoHold功能故障";
+CM_ SG_ 533 HSAActive "HA Active  ";
+CM_ SG_ 533 HSAFailure "HA Failure  ";
+CM_ SG_ 533 AutoHazardBlinking "自动危险警示灯闪烁";
+CM_ SG_ 533 GSensorCalibrationSt "G-sensorCalibration_status";
+CM_ SG_ 533 AutoHoldSWStsVd " AutoHold开关状态有效性";
+CM_ SG_ 533 AutoHoldSWSts " AutoHold开关状态";
+CM_ SG_ 533 LatAccVd "横向加速度有效位";
+CM_ SG_ 533 LatAcc "横向加速度";
+CM_ SG_ 682 BrakelightReq "刹车灯请求";
+CM_ SG_ 682 DecReqEnable "减速请求有效性";
+CM_ SG_ 682 EPBDiagStauts "EPB诊断状态";
+CM_ SG_ 682 Autoholdsupportstatus "AUTOHOLD功能支持状态";
+CM_ SG_ 682 DecReq "减速请求";
+CM_ SG_ 682 EPBSts "EPB状态
+此信号应综合左右EPB的状态作为综合信号发送，其他节点仅通过此信号判断驻车状态";
+CM_ SG_ 682 EPBSWStsVd "EPB开关状态有效性";
+CM_ SG_ 682 EPBSWSts "EPB开关状态";
+CM_ SG_ 682 FailureLampSts "EPB故障灯状态";
+CM_ SG_ 682 FunctionLampSts "EPB功能指示灯状态";
+CM_ SG_ 682 SoundWarningSts "声音报警状态";
+CM_ SG_ 682 ClampForce "夹紧力";
+CM_ SG_ 682 EPB_StatusCounter "EPB报文循环计数";
+CM_ SG_ 682 DisplayInfo "显示信息";
+CM_ SG_ 682 EPB_StatusChecksum "EPB报文数据校验和";
+CM_ SG_ 698 EPBDiagStauts_R "EPB诊断状态";
+CM_ SG_ 698 EPBSts_R "EPB状态";
+CM_ SG_ 698 ClampForce_R "夹紧力";
+CM_ SG_ 698 EPB_StatusCounter_R "EPB报文循环计数";
+CM_ SG_ 698 EPB_StatusChecksum_R "EPB报文数据校验和";
+CM_ SG_ 675 EPSFailure "EPS故障状态";
+CM_ SG_ 675 EPS_StrModeFeedback "Feedback current EPS mode to ICM
+反馈EPS当前模式给ICM";
+CM_ SG_ 675 EPS_TorqSensorStatus "扭矩传感器状态";
+CM_ SG_ 675 EPS_CurrentConsumption " 电流消耗";
+CM_ SG_ 675 EPS_SteeringTorque "转向扭矩";
+CM_ SG_ 675 EPSSWVer "软件版本号";
+CM_ SG_ 675 EPSHWVer "硬件版本号";
+CM_ SG_ 675 EPSDTC "EPS故障码";
+CM_ SG_ 309 EPS_SASChecksum "信号表示消息校验和";
+CM_ SG_ 309 EPS_SASMsgCounter "信号表示EPS的消息计数器";
+CM_ SG_ 309 SAS_FailureSts "方向盘转角传感器信号错误标志";
+CM_ SG_ 309 SAS_CalibrationSts "方向盘转角标定位";
+CM_ SG_ 309 SteeringWheelAngle "实际方向盘转向角  顺时针>0 ,逆时针<0";
+CM_ SG_ 309 SteeringWheelRotSpd "方向盘转向角速度";
+CM_ SG_ 309 SteeringWheelRotDir "方向盘转向角速度方向";
+CM_ SG_ 297 EBS_129Counter "消息计数器";
+CM_ SG_ 297 EBS_FaultSts "EBS故障状态";
+CM_ SG_ 297 EBS_PushRodStroke "EBS输入推杆行程";
+CM_ SG_ 297 EBS_RecuBrkTrqReq "回收扭矩请求值（轮端/总速比）";
+CM_ SG_ 297 EBS_RecuBrkTrqReqSts "回收扭矩请求值状态";
+CM_ SG_ 297 EBS_HBCRequest "制动助力失效辅助请求";
+CM_ SG_ 297 EBS_BrakePedalApplied "制动踏板踩下状态位";
+CM_ SG_ 297 EBS_BrakePed_VD "刹车踏板踩下有效标识位";
+CM_ SG_ 297 EBS_PushRodStrokeSt "输入推杆行程状态位";
+CM_ SG_ 297 EBS_BrkPrsVd "EBS刹车压力有效位";
+CM_ SG_ 297 EBS_BrkPrs "EBS刹车压力";
+CM_ SG_ 297 EBS_129Checksum "Message CheckSum消息校验和";
+CM_ SG_ 125 AirbagFailSts "安全气囊系统状态";
+CM_ SG_ 125 CrashInfo "碰撞信号";
+CM_ SG_ 125 SRS_StatusCheckSum "Message CheckSum";
+CM_ SG_ 125 SRS_StatusCounter "The transmitter shall update the value of the Message Counter signal every time a frame is transmitted ";
+CM_ SG_ 1777 VSPHWVer "硬件版本号";
+CM_ SG_ 1777 VSPSWVer "软件版本号";
+CM_ SG_ 1777 VSPDTC "VSP故障码";
+CM_ SG_ 945 ModeDisp "空调工作模式显示";
+CM_ SG_ 945 RmtACReqFb "远程空调反馈";
+CM_ SG_ 945 HVAC_State "空调系统状态信号";
+CM_ SG_ 945 SetTemDisp "温度设置显示";
+CM_ SG_ 945 ExtTempVd "
+外部温度";
+CM_ SG_ 945 HVAC_RearDefrost "后除霜请求";
+CM_ SG_ 945 BlowerLvl "
+鼓风机档位";
+CM_ SG_ 945 ExtTemp "
+外部温度";
+CM_ SG_ 947 IndicatorAutoFront "前自动模式指示灯";
+CM_ SG_ 947 IndicatorDefrostFront "前除霜指示灯";
+CM_ SG_ 947 IndicatorACFront "前面板AC请求指示灯";
+CM_ SG_ 947 IndicatorOFFFront "前空调关闭指示灯";
+CM_ SG_ 947 IndicatorIntakeFront "前外循环指示灯";
+CM_ SG_ 947 InternalRecycle "内循环指示灯";
+CM_ SG_ 947 HURequest "DVD/HU显示请求";
+CM_ SG_ 947 HUCancel "DVD/HU显示请求取消";
+CM_ SG_ 952 EvapTpt "蒸发器温度";
+CM_ SG_ 952 ACeComprSpdReqHVAC "HVAC压缩机转速请求";
+CM_ SG_ 952 ACReqHVAC "HVAC压缩机开启请求";
+CM_ SG_ 1077 ACPTCPwrReq "PTC功率反馈";
+CM_ SG_ 1077 PTCTpt "PTC温度反馈";
+CM_ SG_ 1077 PTCRly1Ctl "PTC继电器1空调";
+CM_ SG_ 1077 PTCRly2Ctl "PTC2继电器空调";
+CM_ SG_ 1084 ACDCT "空调故障码";
+CM_ SG_ 1080 SWVersionY "软件版本号--年";
+CM_ SG_ 1080 SWVersionM "软件版本号--月";
+CM_ SG_ 1080 SWVersionD "软件版本号--日";
+CM_ SG_ 1080 ACHWVer "硬件版本";
+CM_ SG_ 1080 ACReq "压缩机开启请求";
+CM_ SG_ 1297 PEPS_IMMO_LearnKey "IMMO教学VCU的SK";
+CM_ SG_ 1239 PEPS_IMMO_Response "IMMO对VCU认证请求的反馈";
+CM_ SG_ 937 OdometerInfoVd "里程信息有效位";
+CM_ SG_ 937 OdometerInfo "里程信息";
+CM_ SG_ 500 Poslamp "
+位置灯状态";
+CM_ SG_ 500 Trunk_BackDoor_Sts "尾门/后备箱门状态";
+CM_ SG_ 500 PsgDoorStatus "右前门状态";
+CM_ SG_ 500 RRDoorStatus "右后门状态";
+CM_ SG_ 500 RLDoorStatus "左后门状态";
+CM_ SG_ 500 DRVUnlockState "左前门锁状态";
+CM_ SG_ 500 DefrostCtrl "后除霜状态";
+CM_ SG_ 500 DrvDoorStatus "左前门状态";
+CM_ SG_ 500 HeadLampLowBeamCtrl "前大灯近光控制";
+CM_ SG_ 500 HeadLampHighBeamCtrl "前大灯远光控制";
+CM_ SG_ 500 LDW_SWSet "LDW systerm set by DVD
+LDW系统设置";
+CM_ SG_ 500 KeyState_GW "点火钥匙状态";
+CM_ SG_ 500 HoodStatus "引擎盖状态";
+CM_ SG_ 500 OccupantDetDRVSide "驾驶员安全带状态";
+CM_ SG_ 500 AEBSet "AEBS systerm set by DVD
+AEBS系统设置";
+CM_ SG_ 500 TurnSwitch_GW "转向开关状态";
+CM_ SG_ 500 FrontWiperStatus_GW "前雨刮状态";
+CM_ SG_ 500 DirIndicationLeft_GW "左转向灯状态，信号值变化和转向灯同频率";
+CM_ SG_ 500 DirIndicationRight_GW "右转向灯状态，信号值变化和转向灯同频率";
+CM_ SG_ 500 HazardWarningLightStatus "危险警告灯状态";
+CM_ SG_ 500 BCM_KeyState_VD "KeyState信号有效标志位";
+CM_ SG_ 500 Checksumof1F4 "Message CheckSum";
+CM_ SG_ 500 TurnSwitchVd "转向开关状态有效位";
+CM_ SG_ 500 Counterof1F4 "message counter ";
+CM_ SG_ 500 StrModeSelect "转向助力模式设置";
+CM_ SG_ 1413 OneHourWakeupflag "1H唤醒标志位";
+CM_ SG_ 1413 Year "年";
+CM_ SG_ 1413 Mon "月";
+CM_ SG_ 1413 Date "日";
+CM_ SG_ 1413 Hour "时";
+CM_ SG_ 1413 Mint "分";
+CM_ SG_ 1413 Sec "秒";
+CM_ SG_ 1413 TimTyp "数据类型";
+CM_ SG_ 1413 TBOXDTC "故障码";
+CM_ SG_ 791 FLTirePres "Left front tire pressure";
+CM_ SG_ 791 FRTirePres "Right front tire pressure";
+CM_ SG_ 791 RLTirePres "Left rear tire pressure";
+CM_ SG_ 791 RRTirePres "Right rear tire pressure";
+CM_ SG_ 791 FLPressureWarning "Left front  tire pressure warning status";
+CM_ SG_ 791 FRPressureWarning "Right front  tire pressure warning status";
+CM_ SG_ 791 RLPressureWarning "Left rear tire pressure warning status";
+CM_ SG_ 791 RRPressureWarning "Right rear tire pressure warning status";
+CM_ SG_ 791 FLTempHigh "Left front tire high temperature warning";
+CM_ SG_ 791 FRTempHigh "Right front tire high temperature warning";
+CM_ SG_ 791 RLTempHigh "Left rear tire high temperature warning";
+CM_ SG_ 791 RRTempHigh "Right rear tire high temperature warning";
+CM_ SG_ 791 StudyMode "ECU enter studying TPMS mode";
+CM_ SG_ 791 SystemWarning "ECU System error";
+CM_ SG_ 791 StudyFailureWarning "TPMS Study Failure Warning";
+CM_ SG_ 683 SecurityStatus "Signal to indicate the car has been defended.";
+CM_ SG_ 683 SecurityAlarm "security alarm status";
+CM_ SG_ 683 DrvLockCommand "Lock and unlock command from the driver ";
+CM_ SG_ 683 KSEnable "this signal is used to Indicates Master starts or stops measuring. KS should be deactivated （使无效）while ignition（点火装置） is on or the vehicle is driving.";
+CM_ SG_ 683 DRLLamp "day light indicator
+日行灯状态";
+CM_ SG_ 683 DayNightStatus "自动灯光判断当前外部灯光状态";
+CM_ SG_ 683 BCM_RemoteKeyID "BCM report which remote key ID is on using ";
+CM_ SG_ 683 BackLightControl "To control the Engine Switch back light.
+背光灯状态";
+CM_ SG_ 683 LockCtrl "Used by smart access logic; the software structure
+needs this feedback
+锁命令";
+CM_ SG_ 683 BCM_BackLightLvl "To control the back light brightness.
+背光等级";
+CM_ SG_ 683 DirIndicationLeft "LH turn light indicator
+左转向灯状态，信号值变化和转向灯同频率";
+CM_ SG_ 683 DirIndicationRight "RH turn light indicator
+右转向灯状态，信号值变化和转向灯同频率";
+CM_ SG_ 683 TurnSwitch "转向开关状态";
+CM_ SG_ 683 HandBrakingStatus "Hand Braking Status
+手刹状态";
+CM_ SG_ 683 KeyState "power management feedbackof the Vehicle State.
+点火钥匙状态";
+CM_ SG_ 683 BCM_KeyState_VD "KeyState signal valid flag
+KeyState信号有效标志位";
+CM_ SG_ 683 TurnSwitchVd "转向开关状态有效位";
+CM_ SG_ 683 WiperStatus " Front wiper Status
+前雨刮状态";
+CM_ SG_ 683 KeyOnCounter "Every ignition cycle, the counter +1
+点火次数级数";
+CM_ SG_ 1532 RmtACReq "远程空调请求";
+CM_ SG_ 1532 RmtChgReq "远程充电请求";
+CM_ SG_ 1532 LVBChgCmd "智能补电充电请求";
+CM_ SG_ 1532 MPPreHeatMode "手机预加热模式选择，高档低档";
+CM_ SG_ 1532 RmtACReqTpt "远程空调需求温度";
+CM_ SG_ 1305 ICM_mode_status "The mode status  of ICM          
+仪表模式状态";
+CM_ SG_ 1305 Maintenance_mileageInfo "The mileage distance of Maintenance
+距离保养的里程数";
+CM_ SG_ 1305 Maintenance_daysInfo "The days distance of Maintenance
+距离保养的天数";
+CM_ SG_ 1305 Maintenancealert "The sign of Maintenance alert 
+保养提醒的标志";
+CM_ SG_ 1305 OtaUpdataQuery "用户通过仪表选择升级查询，传递给TBOX检查是否有更新";
+CM_ SG_ 1305 MFSStatu "平均能耗复位请求";
+CM_ SG_ 1305 DriverModeSet "驾驶模式开关状态";
+CM_ SG_ 1305 BrkBkEgyReq "滑行能量回收设置开关，记忆用户的设置";
+CM_ SG_ 1305 StrModeSelect "转向助力模式设置";
+CM_ SG_ 1305 TABButtonReq "坦克掉头模式";
+CM_ SG_ 1305 PButtonReq "驻车软开关请求";
+CM_ SG_ 1305 VSPswich "VSP开关请求";
+CM_ SG_ 1305 OtaFeedback "用户反馈";
+BA_DEF_  "DBName" STRING ;
+BA_DEF_  "BusType" STRING ;
+BA_DEF_  "BaudRate" FLOAT 1000 1000000;
+BA_DEF_ BO_  "GenMsgSendType" ENUM  "cyclic","spontaneous","spontaneous","cyclicIfActive","spontaneousWithDelay";
+BA_DEF_ BO_  "GenMsgCycleTime" FLOAT 0 300000;
+BA_DEF_ BO_  "GenMsgDelayTime" FLOAT 0 300000;
+BA_DEF_ SG_  "GenSigStartValue" FLOAT 0 300000;
+BA_DEF_ BU_  "NodeLayerModules" STRING ;
+BA_DEF_ BU_  "ECU" STRING ;
+BA_DEF_DEF_  "DBName" "";
+BA_DEF_DEF_  "BusType" "";
+BA_DEF_DEF_  "BaudRate" 500000;
+BA_DEF_DEF_  "GenMsgSendType" "cyclic";
+BA_DEF_DEF_  "GenMsgCycleTime" 0;
+BA_DEF_DEF_  "GenMsgDelayTime" 0;
+BA_DEF_DEF_  "GenSigStartValue" 0;
+BA_DEF_DEF_  "NodeLayerModules" "";
+BA_DEF_DEF_  "ECU" "";
+BA_ "BusType" "CAN";
+BA_ "DBName" "E3_X6D12CCAN_V1_14_20250924";
+BA_ "GenMsgCycleTime" BO_ 279 10;
+BA_ "GenMsgCycleTime" BO_ 268 10;
+BA_ "GenMsgCycleTime" BO_ 600 50;
+BA_ "GenMsgSendType" BO_ 1176 1;
+BA_ "GenMsgSendType" BO_ 1173 1;
+BA_ "GenMsgCycleTime" BO_ 825 100;
+BA_ "GenMsgCycleTime" BO_ 595 200;
+BA_ "GenMsgCycleTime" BO_ 1093 200;
+BA_ "GenMsgCycleTime" BO_ 1140 200;
+BA_ "GenMsgCycleTime" BO_ 612 200;
+BA_ "GenMsgCycleTime" BO_ 596 200;
+BA_ "GenMsgCycleTime" BO_ 597 200;
+BA_ "GenMsgCycleTime" BO_ 804 100;
+BA_ "GenMsgCycleTime" BO_ 809 200;
+BA_ "GenMsgCycleTime" BO_ 430 10;
+BA_ "GenMsgCycleTime" BO_ 572 10;
+BA_ "GenMsgCycleTime" BO_ 573 10;
+BA_ "GenMsgCycleTime" BO_ 810 20;
+BA_ "GenMsgCycleTime" BO_ 517 10;
+BA_ "GenMsgCycleTime" BO_ 533 20;
+BA_ "GenMsgCycleTime" BO_ 682 20;
+BA_ "GenMsgCycleTime" BO_ 698 20;
+BA_ "GenMsgCycleTime" BO_ 675 50;
+BA_ "GenMsgCycleTime" BO_ 309 10;
+BA_ "GenMsgCycleTime" BO_ 297 20;
+BA_ "GenMsgCycleTime" BO_ 125 20;
+BA_ "GenMsgCycleTime" BO_ 1777 1000;
+BA_ "GenMsgCycleTime" BO_ 945 50;
+BA_ "GenMsgCycleTime" BO_ 947 50;
+BA_ "GenMsgCycleTime" BO_ 952 100;
+BA_ "GenMsgCycleTime" BO_ 1077 50;
+BA_ "GenMsgCycleTime" BO_ 1084 100;
+BA_ "GenMsgCycleTime" BO_ 1080 50;
+BA_ "GenMsgSendType" BO_ 1297 1;
+BA_ "GenMsgSendType" BO_ 1239 1;
+BA_ "GenMsgCycleTime" BO_ 937 500;
+BA_ "GenMsgCycleTime" BO_ 500 10;
+BA_ "GenMsgCycleTime" BO_ 1413 200;
+BA_ "GenMsgCycleTime" BO_ 791 500;
+BA_ "GenMsgCycleTime" BO_ 683 50;
+BA_ "GenMsgCycleTime" BO_ 1532 200;
+BA_ "GenMsgCycleTime" BO_ 1305 100;
+VAL_ 279 MCU_MotorSpeed_Vd 0 "not valid" 1 "valid" ;
+VAL_ 279 CruSysSet 0 "inactive" 1 "active" ;
+VAL_ 279 CruSysOn 0 "off" 1 "on" ;
+VAL_ 279 BrkPdlPsnVd 0 "Not Valid" 1 "Valid" ;
+VAL_ 279 BrkPdlPsnNC 0 "No apply" 1 "Applied" ;
+VAL_ 279 BrkPdlPsnNO 0 "No apply" 1 "Applied" ;
+VAL_ 279 GasPdlPsnVd 0 "not valid" 1 "valid" ;
+VAL_ 268 DsdDrvTqVd 0 "Invalid" 1 "Valid" ;
+VAL_ 268 VCU_MaxRecyclingTqVd 0 "Invalid" 1 "Valid" ;
+VAL_ 268 VCUActualTqVd 0 "not valid" 1 "valid" ;
+VAL_ 600 Ready 0 "OFF" 1 "ON" ;
+VAL_ 600 VCUKeySta 0 "KEY OFF" 1 "KEY ON" 2 "Ready" ;
+VAL_ 600 GearPsn 0 "reserved" 1 "Position P" 2 "Position R" 3 "Position N" 4 "Position D" ;
+VAL_ 600 IMMOFeedback 0 "IMMO check not OK" 1 "IMMO Check OK" ;
+VAL_ 600 DriveModelFd 0 "nomal" 1 "ECO" 2 "Sport" ;
+VAL_ 600 HCU_ShiftTipInfo 0 "No tip" 1 "Press the security button when shifting" 2 "Press the brake pedal when shifting" 3 "Stop the vehicle when shifting" 4 "Please release acceleration padel when shifting" 5 "Fault,can not in P please used EPB parking" 6 "Please shift the lever to right side" ;
+VAL_ 600 VacuumPressureVd 0 "Invalid" 1 "Valid" ;
+VAL_ 600 CruVehSpdVd 0 "Not Valid" 1 "Valid" ;
+VAL_ 600 HVACHVforbidden 0 "NO forbidden" 1 "Forbidden" ;
+VAL_ 600 BrkBkEgyFd 0 "Normal" 1 "OFF" 2 "Low" 3 "High" ;
+VAL_ 600 VCUBrakelightReq 0 "NO request" 1 "Request" ;
+VAL_ 600 CruVehSpd 0 "km/h (0x0 - 0x12C)" ;
+VAL_ 825 EgyFlowSta 0 "Stoped" 1 "Drive" 2 "Recycling" ;
+VAL_ 825 ReadyInd 0 "OFF" 1 "ON" ;
+VAL_ 825 ChgLineInd 0 "OFF" 1 "ON" ;
+VAL_ 825 TMFltInd 0 "OFF" 1 "ON" ;
+VAL_ 825 LVBFltInd 0 "OFF" 1 "ON" ;
+VAL_ 825 VCUFltInd 0 "OFF" 1 "ON" 2 "flashing" ;
+VAL_ 825 SOCLowInd 0 "OFF" 1 "ON" ;
+VAL_ 825 HVBFltInd 0 "OFF" 1 "ON" ;
+VAL_ 825 lmtPowInd 0 "OFF" 1 "ON" ;
+VAL_ 825 ChgStsInd 0 "OFF" 1 "ON" ;
+VAL_ 825 HVBCutInd 0 "OFF" 1 "ON" ;
+VAL_ 595 RemKm_Vd 0 "Invalid" 1 "Valid" ;
+VAL_ 595 InsEgyConsptChangeFlg 0 "no change" 1 "Change" ;
+VAL_ 595 AvgConsptModeFd 0 "initial" 1 "10 km" 2 "25 km" 2 "30 km" ;
+VAL_ 1093 VCU_445Checksum 0 "Default" 1 "ChargeCondition notsatisfied" ;
+VAL_ 1140 PlugSts 0 "Plug not insert" 1 "Plug insert and no charge" 2 "Plug insert and charging" ;
+VAL_ 1140 ChgSta 0 "Initial value" 1 "Start charge；" 2 "Charge error" 3 "End of charge" ;
+VAL_ 1140 TmgTimesetFlagFDMP5 0 "Initial value" 1 "Executing" 2 "Implement fail" ;
+VAL_ 1140 TmgChgShowFB 0 "Initial value" 1 "start charge" 2 "stop charge" ;
+VAL_ 1140 CAN_VCU_MP5_CHR_DISSATISFY 0 "Default" 1 "ChargeCondition notsatisfied" ;
+VAL_ 1140 CAN_VCU_MP5_LTPROHB 0 "Default" 1 "ForbiddenLowTempCharge " 2 "AllowLowTempCharge" ;
+VAL_ 1140 ChgStart 0 "No Charge" 1 "Start Charge" ;
+VAL_ 1140 CAN_VCU_MP5_CHR_MODE 0 "Nocharge" 1 "NormalCharge" 2 "LonglifeCharge" 3 "LongMileageCharge" 4 "LowTempCharge" ;
+VAL_ 1140 EgyFull 0 "No display" 1 "Display The battery is full" ;
+VAL_ 596 HVACValveState 0 "OFF" 1 "ON" ;
+VAL_ 596 BattValveState 0 "OFF" 1 "ON" ;
+VAL_ 596 VCUThermalSt 0 "default" 1 "Only battery cooling" 2 " Only HVAC cooling" 3 "Both cooling" 4 " Only battery heat" 5 " Only HVAC heat" 6 " Both heat" 7 " HVAC heat and battery cooling" 8 " uniform heat" ;
+VAL_ 597 FANPWM_Vd 0 "Invalid" 1 "Valid" ;
+VAL_ 597 MotorPumpPWM_Vd 0 "Invalid" 1 "Valid" ;
+VAL_ 597 FANPWMState 0 "OFF" 1 "ON" ;
+VAL_ 430 ABSItvInProgress 0 "No Intervention" 1 "Intervention" ;
+VAL_ 430 AYCItvInProgress 0 "No Intervention" 1 "Intervention" ;
+VAL_ 430 TCSItvInProgress 0 "No Intervention" 1 "Intervention" ;
+VAL_ 430 VehSpdVd 0 "not valid" 1 "valid" ;
+VAL_ 430 EngTqIncReqAct 0 "no engine torque increase request" 1 "engine torque increase request" ;
+VAL_ 430 ABSWarningLamp 0 " No warning" 1 " Warning" ;
+VAL_ 430 ESC_SYS_WarnLamp_EDR 0 " No warning" 1 " Warning" ;
+VAL_ 430 EngTqDecReqAct 0 "no engine torque decrease request" 1 "engine torque decrease request" ;
+VAL_ 430 EBDWarningLamp 0 " No warning" 1 " Warning" ;
+VAL_ 572 WhlSpdFRVd 3 "valid" 0 "not valid" ;
+VAL_ 572 WhlSpdFLVd 3 "valid" 0 "not valid" ;
+VAL_ 573 WhlSpdRRVd 3 "valid" 0 "not valid" ;
+VAL_ 573 WhlSpdRLVd 3 "valid" 0 "not valid" ;
+VAL_ 810 FLWheelDir 0 "Forward" 1 "Backward" 2 "Unknow" ;
+VAL_ 810 FRWheelDir 0 "Forward" 1 "Backward" 2 "Unknow" ;
+VAL_ 810 RLWheelDir 0 "Forward" 1 "Backward" 2 "Unknow" ;
+VAL_ 810 RRWheelDir 0 "Forward" 1 "Backward" 2 "Unknow" ;
+VAL_ 517 LongAccVd 0 "Not valid" 1 "Valid" ;
+VAL_ 517 HDCStatus 0 "off(HDC lamp off )" 1 "failure(HDC lamp on (Red))" 2 "on(HDC lamp on (Green) )" 3 "active(HDC lamp flash (Green))" ;
+VAL_ 517 YawRateVd 0 "Not valid" 1 "Valid" ;
+VAL_ 517 AYCFailure 0 "no failure" 1 "failure(ICM igniting ESC LAMP)" ;
+VAL_ 517 EBDFailure 0 "no failure" 1 "failure(ICM igniting BRAKE LAMP)" ;
+VAL_ 517 ABSFailure 0 "no failure" 1 "failure(ICM igniting ABS LAMP)" ;
+VAL_ 517 TCSFailure 0 "no failure" 1 "failure((ICM igniting ESC LAMP)" ;
+VAL_ 517 BrkPrsVd 0 "Not valid" 1 "valid" ;
+VAL_ 533 ESCSw 0 "ESC switch on" 1 "ESC switch off" ;
+VAL_ 533 ESCSwVd 0 "not valid" 1 "valid" ;
+VAL_ 533 ECDActive 0 "Inactive" 1 "Active" ;
+VAL_ 533 ECDAvailable 0 "not available" 1 "available" ;
+VAL_ 533 EPBRequest 0 "No request" 1 "Apply request" 2 "Release request" ;
+VAL_ 533 AutoHoldActive 0 "Inactive" 1 "Active" ;
+VAL_ 533 AutoHoldAvailable 1 "Available" 0 "Not available" ;
+VAL_ 533 AutoholdFailure 0 "No failure" 1 "Failure" ;
+VAL_ 533 HSAActive 0 " Not Active" 1 " Active" ;
+VAL_ 533 HSAFailure 0 " no failure" 1 " failure" ;
+VAL_ 533 AutoHazardBlinking 3 " Invalid signal" 2 " Reserved" 1 " AutoHazardBlinking ON" 0 " AutoHazardBlinking OFF" ;
+VAL_ 533 GSensorCalibrationSt 0 "not in calibrating" 1 "in calibrating" 2 "calibration finished success" 3 "Calibration finished error" ;
+VAL_ 533 AutoHoldSWStsVd 1 "Valid" 0 "Not valid" ;
+VAL_ 533 AutoHoldSWSts 1 "on" 0 "off" ;
+VAL_ 533 LatAccVd 0 "Not valid" 1 "Valid" ;
+VAL_ 682 BrakelightReq 0 "brake light OFF" 1 "brake light ON" 3 "signal not available" ;
+VAL_ 682 DecReqEnable 0 "Not enabled" 1 "enabled" ;
+VAL_ 682 EPBDiagStauts 0 "default session" 1 "programming session" 2 "extended session" 3 " reserved" ;
+VAL_ 682 Autoholdsupportstatus 0 "support" 1 "reserved" 2 "reserved" 3 "Not support" ;
+VAL_ 682 EPBSts 0 "Unknown " 1 "ParkApplied " 2 "Released " 3 "CompletelyReleased(For mantenance)" 4 "Applying " 5 "Releasing " 6 "dynamicBraking" 7 "Reserved" ;
+VAL_ 682 EPBSWStsVd 0 " Not valid (No function)" 1 "Valid  (Full function)" ;
+VAL_ 682 EPBSWSts 0 "no request" 1 "Release request" 2 "Apply request" 3 "Error" ;
+VAL_ 682 FailureLampSts 0 " Lamp Off" 1 " Lamp On" 2 " Lamp Flash" 3 " Reserved" ;
+VAL_ 682 FunctionLampSts 0 " Lamp Off" 1 " Lamp On" 2 " Lamp Flash" 3 " Reserved" ;
+VAL_ 682 SoundWarningSts 0 " off, " 1 " on(one single tone)," 2 " Buzzer (constant tone)" ;
+VAL_ 682 ClampForce 48 "Init" 49 "Error" ;
+VAL_ 682 DisplayInfo 0 "No display" 1 "Inclination too large" 2 "Fasten seat belt" 3 "Open EPB By Switch" 4 "Brake Force Not Enough" 5 "Please press the brake pedal" 6 "EPB in Maintenance Mode" ;
+VAL_ 698 EPBDiagStauts_R 0 "default session" 1 "programming session" 2 "extended session" 3 " reserved" ;
+VAL_ 698 EPBSts_R 0 "Unknown " 1 "ParkApplied " 2 "Released " 3 "CompletelyReleased(For mantenance)" 4 "Applying " 5 "Releasing " 6 "dynamicBraking" 7 "Reserved" ;
+VAL_ 698 ClampForce_R 48 "Init" 49 "Error" ;
+VAL_ 675 EPSFailure 1 "failed" 0 "Not failed" ;
+VAL_ 675 EPS_StrModeFeedback 0 "Error" 1 "Normal" 2 "Comfort " 3 "Sport" ;
+VAL_ 675 EPS_TorqSensorStatus 0 "not valid" 1 "valid" ;
+VAL_ 675 EPS_CurrentConsumption 65535 "Invalid" 0 "0~0xFFFE" ;
+VAL_ 309 SAS_FailureSts 0 "No Failure " 1 "Failure " ;
+VAL_ 309 SAS_CalibrationSts 0 "Sensor not calibrated" 1 "Sensor calibtrated" ;
+VAL_ 309 SteeringWheelAngle 65535 "Sensor Error/ Sensor not calibrated" ;
+VAL_ 309 SteeringWheelRotSpd 255 "Error " ;
+VAL_ 309 SteeringWheelRotDir 1 "counterclockwise" 0 "clockwise or RotSpd  is 0" ;
+VAL_ 297 EBS_FaultSts 0 "No Fault" 1 "Fault(Yellow Warning Lamp)  " 2 "Fault(Red Warning Lamp)" ;
+VAL_ 297 EBS_RecuBrkTrqReqSts 0 " Invalid" 1 " Valid" ;
+VAL_ 297 EBS_HBCRequest 0 "No request" 1 "Request" ;
+VAL_ 297 EBS_BrakePedalApplied 0 " not pressed" 1 " pressed" ;
+VAL_ 297 EBS_BrakePed_VD 0 " Invalid" 1 " Valid" ;
+VAL_ 297 EBS_PushRodStrokeSt 0 " NotInitialized" 1 " Normal" 2 " Faulty" 3 " Reserved" ;
+VAL_ 297 EBS_BrkPrsVd 0 "Not valid" 1 "valid" ;
+VAL_ 125 AirbagFailSts 0 " Warning Lamp OFF" 1 " Warning Lamp ON " 3 " Error" ;
+VAL_ 125 CrashInfo 0 "No crash" 1 "Crash occurred" ;
+VAL_ 945 ModeDisp 1 "Vent" 2 "VENT/FOOT" 3 "FOOT" 4 "DEF/FOOT" 5 "DEF" 8 "Auto" ;
+VAL_ 945 RmtACReqFb 0 "None Order" 1 "Executing" 2 "Implement" 3 "Implement fail" ;
+VAL_ 945 HVAC_State 0 "OFF" 1 "ON" ;
+VAL_ 945 ExtTempVd 0 "not valid" 1 "valid" ;
+VAL_ 945 HVAC_RearDefrost 0 "Not request" 1 "request" ;
+VAL_ 945 BlowerLvl 0 "level 0" 1 "Level 1" 2 "Level 2" 3 "Level 3" 4 "Level 4" 5 "Level 5" 6 "Level 6" 7 "Level 7" 8 "Level 8" 9 "Level 9" ;
+VAL_ 947 IndicatorAutoFront 0 "OFF;" 1 "ON;" ;
+VAL_ 947 IndicatorDefrostFront 0 "OFF;" 1 "ON;" ;
+VAL_ 947 IndicatorACFront 0 "OFF;" 1 "ON;" ;
+VAL_ 947 IndicatorOFFFront 0 "OFF;" 1 "ON;" ;
+VAL_ 947 IndicatorIntakeFront 0 "OFF;" 1 "ON;" ;
+VAL_ 947 InternalRecycle 0 "OFF;" 1 "ON;" ;
+VAL_ 947 HURequest 0 "No action;" 1 "Display HVAC information user interface page" ;
+VAL_ 947 HUCancel 0 "No action;" 1 "Close (do not display)" ;
+VAL_ 952 ACReqHVAC 0 "OFF" 1 "ON" ;
+VAL_ 1077 PTCRly1Ctl 0 "OFF" 3 "ON" ;
+VAL_ 1077 PTCRly2Ctl 0 "OFF" 3 "ON" ;
+VAL_ 1080 ACReq 0 "OFF" 1 "ON" ;
+VAL_ 937 OdometerInfoVd 1 "valid" 0 "Not valid" ;
+VAL_ 937 OdometerInfo 0 "0x0~0x98967F" ;
+VAL_ 500 Poslamp 0 "OFF" 1 "ON" ;
+VAL_ 500 Trunk_BackDoor_Sts 0 "close" 1 "open" ;
+VAL_ 500 PsgDoorStatus 0 "close" 1 "open" ;
+VAL_ 500 RRDoorStatus 0 "close" 1 "open" ;
+VAL_ 500 RLDoorStatus 0 "close" 1 "open" ;
+VAL_ 500 DRVUnlockState 0 "lock" 1 "unlock" ;
+VAL_ 500 DefrostCtrl 0 "off" 1 "on" ;
+VAL_ 500 DrvDoorStatus 0 "Door is close." 1 "Door is open" ;
+VAL_ 500 HeadLampLowBeamCtrl 0 "Off" 1 "On" ;
+VAL_ 500 HeadLampHighBeamCtrl 0 "Off" 1 "On" ;
+VAL_ 500 LDW_SWSet 0 "LDWS  Disabled;" 1 "LDWS  Enabled;" ;
+VAL_ 500 KeyState_GW 0 "OFF" 1 "ACC" 2 "IGN" 3 "CRANK+IG" 7 "Error" ;
+VAL_ 500 HoodStatus 0 "Door is close." 1 "Door is open" ;
+VAL_ 500 OccupantDetDRVSide 0 "unbelted" 1 "belted" ;
+VAL_ 500 AEBSet 0 "AEB  Disabled;" 1 "AEB  Enabled;" ;
+VAL_ 500 TurnSwitch_GW 0 " OFF" 1 " Left" 2 " Right" 3 " Error" ;
+VAL_ 500 FrontWiperStatus_GW 2 "Wiper high " 1 "Wiper low " 0 "wiper off" ;
+VAL_ 500 DirIndicationLeft_GW 1 "ON" 0 "OFF" ;
+VAL_ 500 DirIndicationRight_GW 1 "ON" 0 "OFF" ;
+VAL_ 500 HazardWarningLightStatus 0 "OFF" 1 "ON" ;
+VAL_ 500 BCM_KeyState_VD 0 "Inalid" 3 "Valid" ;
+VAL_ 500 Checksumof1F4 0 " 0-255" ;
+VAL_ 500 TurnSwitchVd 0 " not valid" 1 " valid" ;
+VAL_ 500 Counterof1F4 0 " 0-15" ;
+VAL_ 500 StrModeSelect 0 "No request" 1 "Normal" 2 "Comfort" 3 "Sport" ;
+VAL_ 1413 OneHourWakeupflag 0 "Normal" 1 "1Hwakeup flag" ;
+VAL_ 1413 TimTyp 1 "Server time" 2 "GPS time" 3 "Estimate time" ;
+VAL_ 791 FLPressureWarning 0 "No warning." 1 "No Sensor" 2 "Quik leakage. " 3 "High pressure warning. " 4 "Low pressure warning. " 5 "Sensor battery low" 6 "Sensor failure" ;
+VAL_ 791 FRPressureWarning 0 "No warning. " 1 "No Sensor" 2 "Quik leakage. " 3 "High pressure warning. " 4 "Low pressure warning. " 5 "Sensor battery low" 6 "Sensor failure" ;
+VAL_ 791 RLPressureWarning 0 "No warning." 1 "No Sensor " 2 "Quik leakage. " 3 "High pressure warning. " 4 "Low pressure warning. " 5 "Sensor battery low" 6 "Sensor failure" ;
+VAL_ 791 RRPressureWarning 0 "No warning." 1 "No Sensor " 2 "Quik leakage. " 3 "High pressure warning. " 4 "Low pressure warning. " 5 "Sensor battery low" 6 "Sensor failure" ;
+VAL_ 791 FLTempHigh 0 "No warning" 1 "High temperature warning" ;
+VAL_ 791 FRTempHigh 0 "No warning" 1 "High temperature warning" ;
+VAL_ 791 RLTempHigh 0 "No warning" 1 "High temperature warning" ;
+VAL_ 791 RRTempHigh 0 "No warning" 1 "High temperature warning" ;
+VAL_ 791 StudyMode 0 "Normal" 1 "studying TPMS" ;
+VAL_ 791 SystemWarning 0 "No any error." 1 "System error." ;
+VAL_ 791 StudyFailureWarning 0 "no failure" 1 "failure" ;
+VAL_ 791 TireWarning 0 " no failure" 1 " failure" ;
+VAL_ 683 SecurityStatus 0 "Not defended" 1 "Defended" ;
+VAL_ 683 SecurityAlarm 0 "OFF" 1 "ON" ;
+VAL_ 683 DrvLockCommand 0 "no lock/unlock action" 1 "RKE Lock" 2 "Smart Entry Lock" 3 "Mechanical Lock" 4 "Centrol Lock" 5 "RKE Unlock" 6 "Smart Entry Unlock" 7 "mechanical Unlock" 8 "Centrol Unlock" 9 "Remote lock" 10 "Remote unlock" 13 "30s auto lock" ;
+VAL_ 683 KSEnable 0 "Disable" 1 "Enable" ;
+VAL_ 683 DRLLamp 0 "OFF" 1 "ON" ;
+VAL_ 683 DayNightStatus 0 "Day" 1 "Night" ;
+VAL_ 683 BCM_RemoteKeyID 0 "No ID detection" 1 "ID1" 2 "ID2" 3 "ID3" 4 "ID4" ;
+VAL_ 683 BackLightControl 0 "OFF" 1 "Light with the backlight level" 2 "Light with the maximum backlight level " 3 "not used" ;
+VAL_ 683 LockCtrl 0 "no lock/unlock action" 1 "any lock request different from RKE or Smart and relock" 33 "RKE lock ID No.1" 34 "RKE lock ID No.2" 35 "RKE lock ID No.3" 36 "RKE lock ID No.4" 47 "RKE 30s autolock" 63 "Smart 30s autolock" 79 "Remote 30s autolock" 49 "Smart Entry lock ID No.1" 50 "Smart Entry lock ID No.2" 51 "Smart Entry lock ID No.3" 52 "Smart Entry lock ID No.4" 65 "Remote lock" 129 "any unlock request different from RKE and Smart" 161 "RKE unlock ID No.1" 162 "RKE unlock ID No.2" 163 "RKE unlock ID No.3" 164 "RKE unlock ID No.4" 177 "Smart Entry unlock ID No.1" 178 "Smart Entry unlock ID No.2" 179 "Smart Entry unlock ID No.3" 180 "Smart Entry unlock ID No.4" 193 "Remote unlock" ;
+VAL_ 683 DirIndicationLeft 0 "OFF" 1 "ON" ;
+VAL_ 683 DirIndicationRight 0 "OFF" 1 "ON" ;
+VAL_ 683 TurnSwitch 0 " OFF" 1 " Left" 2 " Right" 3 " Error" ;
+VAL_ 683 HandBrakingStatus 0 "Release" 1 "Braking" ;
+VAL_ 683 KeyState 0 "OFF" 1 "ACC" 2 "IGN" 3 "CRANK+IG" 7 "error" ;
+VAL_ 683 BCM_KeyState_VD 0 "Inalid" 3 "Valid" ;
+VAL_ 683 TurnSwitchVd 0 " not valid" 1 " valid" ;
+VAL_ 683 WiperStatus 0 "wiper  off" 1 "Wiper  low " 2 "Wiper   high " ;
+VAL_ 1532 RmtACReq 0 "initial" 2 "RemoteAC Stop Request" 3 "RemoteAC Start Request" ;
+VAL_ 1532 RmtChgReq 0 "initial" 2 "RemoteCharge Stop Request" 3 "RemoteCharge Start Request" ;
+VAL_ 1532 LVBChgCmd 0 "No request" 1 "Request Charged Off" 2 "Request Charged On" ;
+VAL_ 1532 MPPreHeatMode 0 "initial" 1 "High" 2 "Low" ;
+VAL_ 1305 ICM_mode_status 0 "reserved " 1 "Classic " 2 "sport  " 3 "technology " ;
+VAL_ 1305 Maintenancealert 0 "No maintain alert " 1 "Predicted maintain alert(距离保养里程≤200km,或距离保养天数≤5天）  " 2 "Immediately  maintain alert(距离保养里程0km,或距离保养天数0天）  " 3 "reserved" ;
+VAL_ 1305 OtaUpdataQuery 0 "默认状态" 1 "升级查询" ;
+VAL_ 1305 MFSStatu 0 "no request" 1 " request" ;
+VAL_ 1305 DriverModeSet 0 "nomal" 1 "ECO" 2 "Sport" ;
+VAL_ 1305 BrkBkEgyReq 0 "Normal" 1 "OFF" 2 "Low" 3 "High" ;
+VAL_ 1305 StrModeSelect 0 "No request" 1 "Normal" 2 "Comfort" 3 "Sport" ;
+VAL_ 1305 TABButtonReq 0 "TAB NotActive" 1 "TAB Active" 2 "Error" ;
+VAL_ 1305 PButtonReq 0 "No request" 1 "Release Request" 2 "Apply Request" 3 "Error" ;
+VAL_ 1305 VSPswich 0 "ON" 1 "OFF" ;
+VAL_ 1305 OtaFeedback 0 "暂不更新" 1 "立即更新" ;
+
